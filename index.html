@@ -3,89 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KetemuSetan.id - Marketplace Dunia Gaib</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #0d0d0d;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 3em;
-      color: #ff0066;
-      text-shadow: 2px 2px 10px #ff3399;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-    .setan-card {
-      background-color: #1a1a1a;
-      border: 2px solid #ff0066;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px auto;
-      width: 300px;
-      box-shadow: 0 0 15px #ff3399;
-      transition: transform 0.2s;
-    }
-    .setan-card:hover {
-      transform: scale(1.05);
-    }
-    .setan-img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .button {
-      background-color: #ff0066;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-    .button:hover {
-      background-color: #ff3399;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #888;
-    }
-  </style>
+  <title>temusetan.id</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>👻 KetemuSetan.id 👻</h1>
-  <p>Selamat datang di pasar dunia gaib paling lucu di Indonesia!  
-  Di sini kamu bisa “menyewa” setan lucu untuk acara, konten, atau sekadar hiburan malam Jumat 🤡</p>
+  <header>
+    <h1>temusetan.id</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="article.html">Artikel</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
 
-  <div class="setan-card">
-    <img class="setan-img" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Pocong_in_the_Indonesian_folk_mythology.jpg" alt="Pocong Lucu">
-    <h3>Pocong Santuy</h3>
-    <p>Ngakak tiap kali loncat. Cocok buat acara buka puasa bareng.</p>
-    <button class="button">Sewa Sekarang</button>
-  </div>
+  <section class="hero">
+    <h2>Flash Sale! Sewa Setan 50% OFF</h2>
+    <button>Pesan Sekarang</button>
+  </section>
 
-  <div class="setan-card">
-    <img class="setan-img" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Kuntilanak_in_Indonesian_mythology.jpg" alt="Kuntilanak Ketawa">
-    <h3>Kuntilanak Ketawa</h3>
-    <p>Ketawanya auto bikin suasana cair. Bonus: nyanyi lagu dangdut!</p>
-    <button class="button">Sewa Sekarang</button>
-  </div>
-
-  <div class="setan-card">
-    <img class="setan-img" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Tuyul_illustration.png" alt="Tuyul Imut">
-    <h3>Tuyul Imut</h3>
-    <p>Bisa bantu nyari receh. Tapi jangan suruh transfer e-wallet ya 😆</p>
-    <button class="button">Sewa Sekarang</button>
-  </div>
-
-  <footer>
-    © 2025 KetemuSetan.id | Parodi semata, jangan panggil beneran.
-  </footer>
+  <section class="articles">
+    <h2>Misteri di Balik Tirai</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="img/kuntilanak.jpg" alt="Kuntilanak">
+        <h3>Kisah Hyota Setan</h3>
+        <p>Kisah seram yang tak terlupakan...</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
