@@ -1,68 +1,120 @@
+/* Font & color setup */
 body {
-  background-color: #0b0b0b;
-  color: #f2f2f2;
-  font-family: 'Creepster', cursive;
   margin: 0;
-  text-align: center;
+  background-color: #0d0d0d;
+  color: #eee;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  cursor: url('https://cdn.jsdelivr.net/gh/isaiahjc/cursors/ghost.cur'), auto;
 }
 
 header {
-  background-color: #1a1a1a;
-  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 0 10px #7b2cbf;
+}
+
+header h1 {
+  font-family: 'Creepster', cursive;
+  color: #7b2cbf;
+  font-size: 2em;
 }
 
 nav a {
-  color: #ff004c;
-  margin: 0 10px;
+  color: #eee;
   text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  text-shadow: 0 0 8px #ff004c;
+  color: #d7263d;
 }
 
+/* Hero section */
 .hero {
-  margin-top: 50px;
+  text-align: center;
+  padding-top: 180px;
+  padding-bottom: 150px;
+  background: radial-gradient(circle at top, rgba(60,0,100,0.3), transparent 70%);
+}
+
+.hero h2 {
+  font-family: 'Creepster', cursive;
+  font-size: 3em;
+  color: #7b2cbf;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+.hero span {
+  color: #d7263d;
+}
+
+.buttons {
+  margin-top: 40px;
 }
 
 .btn {
-  background-color: #ff004c;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  background: #7b2cbf;
   color: white;
-  cursor: pointer;
+  padding: 14px 28px;
+  border-radius: 50px;
+  margin: 0 10px;
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
 .btn:hover {
-  background-color: #b3003a;
-  box-shadow: 0 0 10px #ff004c;
+  background: #d7263d;
+  transform: scale(1.1);
 }
 
-.catalog {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 30px;
+.btn-random {
+  box-shadow: 0 0 15px #7b2cbf;
+  animation: pulse 2s infinite;
 }
 
-.card {
-  background-color: #1c1c1c;
-  border-radius: 12px;
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0 0 10px #111;
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #7b2cbf; }
+  50% { box-shadow: 0 0 25px #d7263d; }
+  100% { box-shadow: 0 0 10px #7b2cbf; }
 }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
+/* Fog animation */
+.fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url('https://i.ibb.co/2djXjVC/fog-texture.png') repeat;
+  opacity: 0.05;
+  animation: moveFog 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveFog {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
 }
 
 footer {
-  background: #111;
-  padding: 10px;
+  text-align: center;
+  padding: 40px;
+  color: #888;
   font-size: 0.9em;
 }
