@@ -1,0 +1,168 @@
+/* ===================================================
+   KETEMUSETAN.ID — Aura Mistis Elegan
+   Tema: Hitam Merah Kabut & Hutan Serem
+   =================================================== */
+
+/* Font mistis elegan */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --merah: #ff1a1a;
+  --hitam: #0b0b0b;
+  --abu: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--hitam);
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ====== Background Hutan Gelap ====== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('assets/dark-forest.jpg') center/cover no-repeat;
+  filter: brightness(0.25) contrast(1.3);
+  z-index: -3;
+}
+
+/* ====== Kabut Mistis ====== */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('assets/fog.png') repeat;
+  background-size: 800px;
+  opacity: 0.5;
+  animation: fogMove 120s linear infinite;
+  z-index: -2;
+}
+
+@keyframes fogMove {
+  from {background-position: 0 0;}
+  to {background-position: -2000px 0;}
+}
+
+/* ====== Partikel Mistis ====== */
+.particle {
+  position: fixed;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 50, 50, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  animation: floatUp linear infinite;
+  z-index: -1;
+}
+
+@keyframes floatUp {
+  0% {transform: translateY(0) scale(0.8); opacity: 0.8;}
+  100% {transform: translateY(-120vh) scale(1.6); opacity: 0;}
+}
+
+/* ====== Logo UI ====== */
+.logo-ui {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px red);
+}
+
+/* ====== Judul Website ====== */
+h1 {
+  font-family: 'Cinzel', serif;
+  color: var(--merah);
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 0 20px #ff0000, 0 0 40px #ff3c3c;
+  margin-top: 70px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #c5c5c5;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+/* ====== Deskripsi Pembuka ====== */
+.description {
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ddd;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ====== Tombol Panggil Setan ====== */
+button {
+  display: block;
+  margin: 50px auto;
+  background: linear-gradient(145deg, #ff1a1a, #8b0000);
+  color: #fff;
+  border: none;
+  font-size: 1.1em;
+  padding: 15px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  animation: pulse 4s infinite alternate;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 60px rgba(255, 0, 0, 0.8);
+}
+
+@keyframes pulse {
+  0% {box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);}
+  100% {box-shadow: 0 0 80px rgba(255, 0, 0, 1);}
+}
+
+/* ====== Bagian Daftar Setan ====== */
+.setan-section {
+  margin: 100px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.setan {
+  font-family: 'Cinzel', serif;
+  color: var(--merah);
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #ff0000;
+}
+
+.setan p {
+  color: #ccc;
+  font-size: 1em;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
