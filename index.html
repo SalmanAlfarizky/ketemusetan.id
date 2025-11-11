@@ -195,16 +195,17 @@
     © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
   </footer>
 
-  <script>
-    // === PARTIKEL AURA MERAH ===
-    for (let i = 0; i < 70; i++) {
-      const p = document.createElement('div');
-      p.classList.add('particle');
-      p.style.left = Math.random() * 100 + 'vw';
-      p.style.animationDuration = (6 + Math.random() * 8) + 's';
-      p.style.animationDelay = (Math.random() * 10) + 's';
-      p.style.width = p.style.height = (3 + Math.random() * 6) + 'px';
-      document.body.appendChild(p);
+ <script>
+for (let i = 0; i < 70; i++) {
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.animationDuration = (6 + Math.random() * 8) + 's';
+  p.style.animationDelay = (Math.random() * 10) + 's';
+  document.body.appendChild(p);
+}
+</script>
+
     }
 
     // === FITUR ACAC SETAN ===
