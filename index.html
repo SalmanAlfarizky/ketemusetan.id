@@ -1,175 +1,198 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KetemuSetan.id 👁‍🗨</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', sans-serif;
-      color: #f0eaea;
+      color: #f8f8f8;
+      background: radial-gradient(circle at top, #1a0000 0%, #000 90%);
       overflow: hidden;
-      background: #000;
+      min-height: 100vh;
       position: relative;
-      height: 100vh;
     }
 
-    /* ===== BACKGROUND LAYERS ===== */
-    .bg-layer {
+    /* === KABUT & BACKGROUND === */
+    .fog {
       position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .moon {
-      position: absolute;
-      top: 10%;
-      left: 70%;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fff, #c9c9c9 40%, #999 70%, transparent 80%);
-      box-shadow: 0 0 100px 20px #ff000015;
-      animation: pulse 6s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 80px 15px #ff000030; }
-      50% { box-shadow: 0 0 130px 25px #ff000060; }
-    }
-
-    .forest {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 35%;
-      background: url('https://i.ibb.co/QMdDtfk/dark-forest-silhouette.png') repeat-x bottom;
-      background-size: cover;
-      opacity: 0.4;
-      animation: forestMove 60s linear infinite;
-    }
-    @keyframes forestMove {
-      from { background-position: 0 0; }
-      to { background-position: -1000px 0; }
-    }
-
-    .fog {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 200%;
       height: 200%;
-      background: url('https://i.ibb.co/s1JkSLP/fog.png');
+      background: url('https://i.ibb.co/s1JkSLP/fog.png') repeat;
       background-size: cover;
-      opacity: 0.08;
-      animation: fogAnim 100s linear infinite;
+      opacity: 0.15;
+      animation: fogMove 90s linear infinite;
+      z-index: 0;
     }
-    @keyframes fogAnim {
+    .fog:nth-child(2) {
+      opacity: 0.25;
+      animation-duration: 140s;
+      animation-direction: reverse;
+    }
+    @keyframes fogMove {
       from { transform: translateX(0); }
       to { transform: translateX(-1000px); }
     }
 
-    /* ===== MAIN CONTENT ===== */
-    header {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding-top: 80px;
-      animation: fadeDown 2s ease;
+    /* === SILUET HUTAN === */
+    .forest {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 250px;
+      background: url('https://i.ibb.co/GF8QywY/forest-silhouette.png') center bottom repeat-x;
+      background-size: contain;
+      opacity: 0.4;
+      z-index: 1;
     }
-    header h1 {
+
+    /* === LOGO UI === */
+    .logo-ui {
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      width: 80px;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 10px #ff000050);
+      z-index: 3;
+      transition: all 0.3s ease;
+    }
+    .logo-ui:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 15px #ff000080);
+    }
+
+    /* === HEADER === */
+    header {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 50px;
+      color: #ff2e2e;
       font-family: 'Cinzel', serif;
-      color: #ff2b2b;
-      font-size: 3rem;
-      text-shadow: 0 0 25px #ff000060, 0 0 60px #80000090;
-      letter-spacing: 2px;
+      text-shadow: 0 0 25px #ff000080;
+      letter-spacing: 3px;
+      z-index: 2;
+      position: relative;
+      animation: fadeDown 1.5s ease-out;
     }
     header p {
-      font-size: 1.1rem;
-      color: #ccc;
-      text-shadow: 0 0 10px #400000;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      color: #bbb;
+      margin-top: 8px;
     }
-
     @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
+    /* === MAIN CONTENT === */
     main {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      padding: 0 20px 120px;
       position: relative;
       z-index: 2;
-      max-width: 700px;
-      margin: 60px auto;
-      text-align: center;
-      animation: fadeIn 2s ease;
+      animation: fadeIn 2s ease-in;
     }
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
     .desc {
       font-size: 1.1rem;
-      line-height: 1.8;
       color: #ddd;
-      margin-bottom: 40px;
-      text-shadow: 0 0 8px #3b0000;
+      line-height: 1.8;
+      text-shadow: 0 0 6px #4a0000;
+      margin-bottom: 70px;
     }
 
+    /* === BUTTON === */
     button {
-      background: linear-gradient(135deg, #7a0000, #ff0000);
+      background: linear-gradient(145deg, #7a0000, #ff1a1a);
       border: none;
       color: white;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      padding: 18px 45px;
+      border-radius: 40px;
       cursor: pointer;
-      box-shadow: 0 0 25px #ff000060;
-      transition: 0.3s ease;
+      box-shadow: 0 0 25px #ff000050;
+      transition: all 0.3s ease;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
     }
     button:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 45px #ff0000cc;
+      box-shadow: 0 0 50px #ff0000cc;
     }
 
+    /* === RESULT === */
     .result {
-      margin-top: 50px;
+      margin-top: 60px;
       font-size: 1.5rem;
-      color: #ff3c3c;
       font-family: 'Cinzel', serif;
+      color: #ff3c3c;
       text-shadow: 0 0 15px #ff0000cc;
-      animation: appear 1s ease;
+      animation: appear 0.8s ease;
     }
-
     @keyframes appear {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
     }
 
     footer {
+      margin-top: 100px;
       text-align: center;
-      color: #777;
       font-size: 0.9rem;
-      margin-top: 80px;
+      color: #777;
       padding-bottom: 30px;
-      position: relative;
       z-index: 2;
+      position: relative;
+    }
+
+    /* === FLOATING PARTICLES === */
+    .particle {
+      position: fixed;
+      width: 2px;
+      height: 2px;
+      background: rgba(255, 60, 60, 0.8);
+      border-radius: 50%;
+      animation: float 12s linear infinite;
+      z-index: 2;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <!-- Latar belakang layer -->
-  <div class="bg-layer">
-    <div class="moon"></div>
-    <div class="forest"></div>
-    <div class="fog"></div>
-  </div>
+  <div class="fog"></div>
+  <div class="fog"></div>
+  <div class="forest"></div>
+
+  <img src="https://upload.wikimedia.org/wikipedia/id/0/0f/Logo_Universitas_Indonesia.png" alt="Logo UI" class="logo-ui">
+
+  <script>
+    // buat partikel efek aura
+    for (let i = 0; i < 50; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDuration = (8 + Math.random() * 8) + 's';
+      p.style.animationDelay = (Math.random() * 10) + 's';
+      document.body.appendChild(p);
+    }
+  </script>
 
   <header>
     <h1>KetemuSetan.id</h1>
@@ -178,13 +201,12 @@
 
   <main>
     <p class="desc">
-      Selamat datang di <b>KetemuSetan.id</b> — portal digital bagi mereka yang berani mengintip ke sisi gelap.  
-      Di sini, legenda urban dan roh nusantara menunggu untuk dipanggil.  
-      Tekan tombol di bawah... dan biarkan yang tak terlihat menampakkan diri.
+      Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.  
+      Di sini, roh, legenda, dan bayangan bersatu.  
+      Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...
     </p>
 
     <button id="summonBtn">🔮 Panggil Setan Acak</button>
-
     <div class="result" id="result"></div>
   </main>
 
@@ -194,23 +216,21 @@
 
   <script>
     const setanList = [
-      "👻 Kuntilanak — tangisnya menembus malam, menandai kehadirannya.",
-      "💀 Pocong — melompat tanpa arah, mencari janji yang belum ditepati.",
-      "🕯️ Genderuwo — sosok besar berbulu, suka menampakkan diri di antara pepohonan.",
-      "🩸 Tuyul — makhluk kecil dengan tawa licik di balik bayanganmu.",
-      "🌑 Leak — terbang di bawah bulan, haus akan jiwa manusia.",
-      "🕷️ Wewe Gombel — dendamnya pada dunia manusia tak pernah padam."
+      "👻 Kuntilanak — tangisnya mengantar jiwa yang hilang arah.",
+      "💀 Pocong — yang menunggu tali kafan dilepas, tapi tak pernah selesai.",
+      "🕯️ Genderuwo — penunggu pohon besar yang menyukai aroma darah.",
+      "🩸 Tuyul — kecil, cepat, dan haus akan emas manusia.",
+      "🌑 Leak — makhluk malam yang menari di atas api kehidupan.",
+      "🕷️ Wewe Gombel — yang melindungi anak hilang, tapi membenci orang dewasa."
     ];
 
     const resultDiv = document.getElementById('result');
-    const btn = document.getElementById('summonBtn');
-
-    btn.addEventListener('click', () => {
+    document.getElementById('summonBtn').addEventListener('click', () => {
       const randomSetan = setanList[Math.floor(Math.random() * setanList.length)];
       resultDiv.innerHTML = randomSetan;
       resultDiv.style.animation = 'none';
       void resultDiv.offsetWidth;
-      resultDiv.style.animation = 'appear 1s ease';
+      resultDiv.style.animation = 'appear 0.8s ease';
     });
   </script>
 </body>
