@@ -15,24 +15,26 @@
       scroll-behavior: smooth;
     }
 
-    /* === BACKGROUND MULTI-LAYER === */
+    /* === BACKGROUND HUTAN === */
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      inset: 0;
       background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      filter: brightness(0.25) contrast(1.2);
-      z-index: -3;
+      filter: brightness(0.25) contrast(1.15);
+      z-index: -4;
     }
+
+    /* === LAPISAN KABUT === */
     body::after {
       content: "";
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: url('https://i.ibb.co/YXZvWsh/fog-texture.png') repeat;
-      background-size: 800px;
-      opacity: 0.35;
-      animation: fogMove 120s linear infinite;
-      z-index: -2;
+      inset: 0;
+      background: url('https://raw.githubusercontent.com/emmelleppi/foggy-background/main/fog-texture.png') repeat;
+      background-size: 700px;
+      opacity: 0.5;
+      animation: fogMove 100s linear infinite;
+      z-index: -3;
     }
     @keyframes fogMove {
       from {background-position: 0 0;}
@@ -43,16 +45,16 @@
     .logo-ui {
       position: fixed;
       top: 20px;
-      right: 20px;
+      right: 25px;
       width: 70px;
       opacity: 0.95;
-      filter: drop-shadow(0 0 10px #ff0000a0);
+      filter: drop-shadow(0 0 15px #ff0000b0);
       transition: all 0.3s ease;
       z-index: 10;
     }
     .logo-ui:hover {
       transform: scale(1.1);
-      filter: drop-shadow(0 0 25px #ff2020);
+      filter: drop-shadow(0 0 30px #ff2020);
     }
 
     /* === HEADER === */
@@ -61,18 +63,20 @@
       padding-top: 120px;
       color: #ff2e2e;
       font-family: 'Cinzel', serif;
-      text-shadow: 0 0 25px #ff0000c0;
+      text-shadow: 0 0 25px #ff0000b0;
       animation: fadeInDown 2s ease-out;
+      z-index: 1;
+      position: relative;
     }
     header h1 {
       font-size: 2.8rem;
       letter-spacing: 2px;
     }
     header p {
-      color: #cfcfcf;
-      font-size: 1.05rem;
-      letter-spacing: 1px;
+      color: #d0d0d0;
+      font-size: 1rem;
       margin-top: 6px;
+      letter-spacing: 1px;
     }
     @keyframes fadeInDown {
       from {opacity: 0; transform: translateY(-30px);}
@@ -82,7 +86,7 @@
     /* === CONTENT === */
     main {
       max-width: 850px;
-      margin: 100px auto 200px auto;
+      margin: 120px auto 200px;
       text-align: center;
       padding: 0 25px;
       position: relative;
@@ -103,7 +107,7 @@
 
     /* === BUTTON === */
     button {
-      background: linear-gradient(145deg, #800000, #ff1a1a);
+      background: linear-gradient(145deg, #7a0000, #ff1a1a);
       border: none;
       color: white;
       font-size: 1.3rem;
@@ -113,14 +117,16 @@
       font-family: 'Cinzel', serif;
       letter-spacing: 1px;
       transition: all 0.3s ease;
-      box-shadow: 0 0 30px #ff000040;
+      box-shadow: 0 0 40px #ff000060;
+      z-index: 2;
+      position: relative;
     }
     button:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 80px #ff0000a0;
+      transform: scale(1.1);
+      box-shadow: 0 0 100px #ff0000a0;
     }
 
-    /* === RESULT === */
+    /* === HASIL SETAN === */
     .result {
       margin-top: 70px;
       font-size: 1.6rem;
@@ -134,20 +140,20 @@
       to {opacity: 1; transform: scale(1);}
     }
 
-    /* === PARTICLE EFFECT === */
+    /* === PARTIKEL MERAH === */
     .particle {
       position: fixed;
       bottom: 0;
-      width: 5px;
-      height: 5px;
-      background: rgba(255, 50, 50, 0.6);
+      width: 6px;
+      height: 6px;
+      background: rgba(255, 50, 50, 0.8);
       border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
       animation: floatUp linear infinite;
-      z-index: -1;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+      z-index: -2;
     }
     @keyframes floatUp {
-      0% {transform: translateY(0) scale(0.8); opacity: 0.6;}
+      0% {transform: translateY(0) scale(0.8); opacity: 0.8;}
       100% {transform: translateY(-120vh) scale(1.5); opacity: 0;}
     }
 
@@ -157,13 +163,15 @@
       color: #777;
       font-size: 0.9rem;
       padding-bottom: 60px;
+      z-index: 2;
+      position: relative;
     }
   </style>
 </head>
 <body>
 
   <!-- Logo Universitas Indonesia -->
-  <img src="https://icon2.cleanpng.com/20180401/rwe/avccmlk19.webp"
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Universitas_Indonesia_%28emblem_only%29.svg"
        alt="Logo Universitas Indonesia" class="logo-ui">
 
   <header>
@@ -187,17 +195,18 @@
   </footer>
 
   <script>
-    // Efek partikel aura mistis
-    for (let i = 0; i < 50; i++) {
+    // === PARTIKEL AURA MERAH ===
+    for (let i = 0; i < 70; i++) {
       const p = document.createElement('div');
       p.classList.add('particle');
       p.style.left = Math.random() * 100 + 'vw';
-      p.style.animationDuration = (8 + Math.random() * 10) + 's';
+      p.style.animationDuration = (6 + Math.random() * 8) + 's';
       p.style.animationDelay = (Math.random() * 10) + 's';
+      p.style.width = p.style.height = (3 + Math.random() * 6) + 'px';
       document.body.appendChild(p);
     }
 
-    // Fitur acak setan
+    // === FITUR ACAC SETAN ===
     const setanList = [
       "👻 Kuntilanak — tangisnya mengantar jiwa yang hilang arah.",
       "💀 Pocong — menunggu tali kafan dilepas, tapi tak pernah selesai.",
