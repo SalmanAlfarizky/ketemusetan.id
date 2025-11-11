@@ -1,121 +1,36 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panggil Setan Acak 👻 | KetemuSetan.id</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* animasi kabut muncul */
-    .fade-fog {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(50,0,80,0.5), transparent 70%);
-      animation: fogFlash 1.2s ease-out;
-      pointer-events: none;
-      z-index: 50;
-    }
+<script>
+const setanList = [
+  { nama: "Pocong Pusing", img: "https://i.ibb.co/V3DPxSz/pocong.png", deskripsi: "Dia gak bisa diem, tiap loncat selalu nabrak tiang listrik.", harga: "Rp50.000 / jam" },
+  { nama: "Kuntilanak Karaoke", img: "https://i.ibb.co/dfvWmcg/kuntilanak.png", deskripsi: "Suaranya bikin merinding, tapi bisa request lagu dangdut.", harga: "Rp75.000 / jam" },
+  { nama: "Genderuwo Galau", img: "https://i.ibb.co/jZnGvC8/genderuwo.png", deskripsi: "Badannya besar tapi hatinya kecil. Sering nangis di pojokan.", harga: "Rp60.000 / jam" },
+  { nama: "Tuyul Sultan", img: "https://i.ibb.co/bR5hs7p/tuyul.png", deskripsi: "Udah pensiun nyuri, sekarang fokus investasi kripto.", harga: "Rp40.000 / jam" }
+];
 
-    @keyframes fogFlash {
-      0% { opacity: 0; }
-      20% { opacity: 0.6; }
-      100% { opacity: 0; }
-    }
+function panggilSetan() {
+  console.log("Tombol dipencet!");
+  const hasilDiv = document.getElementById('hasil');
+  const acak = setanList[Math.floor(Math.random() * setanList.length)];
 
-    .setan-card {
-      animation: munculSetan 0.5s ease-in-out;
-    }
+  // mainin suara (aman dari error)
+  const sound = document.getElementById('boooSound');
+  sound.currentTime = 0;
+  sound.play().catch(() => console.log("Audio diblokir oleh browser."));
 
-    @keyframes munculSetan {
-      0% { opacity: 0; transform: scale(0.8) rotate(-5deg); }
-      100% { opacity: 1; transform: scale(1) rotate(0); }
-    }
-  </style>
-</head>
-<body>
-  <div class="fog"></div>
+  // munculin efek kabut flash
+  const fogFlash = document.createElement('div');
+  fogFlash.className = 'fade-fog';
+  document.body.appendChild(fogFlash);
+  setTimeout(() => fogFlash.remove(), 1200);
 
-  <header>
-    <h1>👻 KetemuSetan.id</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="daftar-setan.html">Daftar Setan</a>
-      <a href="asal-usul.html">Asal Usul</a>
-      <a href="booking.html">Booking</a>
-      <a href="acak.html" class="active">Setan Acak</a>
-    </nav>
-  </header>
-
-  <main class="acak-page">
-    <h2>🎲 Panggil Setan Acak</h2>
-    <p>Klik tombol di bawah ini untuk memanggil setan pilihan semesta (kalau berani 😏).</p>
-    <button class="btn big-btn" onclick="panggilSetan()">🔮 Panggil Sekarang</button>
-
-    <div class="hasil-container" id="hasil"></div>
-  </main>
-
-  <footer>
-    © 2025 KetemuSetan.id — Jangan panggil dua kali, nanti beneran datang.
-  </footer>
-
-  <!-- efek suara -->
-  <audio id="boooSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0d5c41c777.mp3?filename=boo-64756.mp3" preload="auto"></audio>
-
-  <script>
-    const setanList = [
-      { 
-        nama: "Pocong Pusing",
-        img: "https://i.ibb.co/V3DPxSz/pocong.png",
-        deskripsi: "Dia gak bisa diem, tiap loncat selalu nabrak tiang listrik.",
-        harga: "Rp50.000 / jam"
-      },
-      { 
-        nama: "Kuntilanak Karaoke",
-        img: "https://i.ibb.co/dfvWmcg/kuntilanak.png",
-        deskripsi: "Suaranya bikin merinding, tapi bisa request lagu dangdut.",
-        harga: "Rp75.000 / jam"
-      },
-      { 
-        nama: "Genderuwo Galau",
-        img: "https://i.ibb.co/jZnGvC8/genderuwo.png",
-        deskripsi: "Badannya besar tapi hatinya kecil. Sering nangis di pojokan.",
-        harga: "Rp60.000 / jam"
-      },
-      { 
-        nama: "Tuyul Sultan",
-        img: "https://i.ibb.co/bR5hs7p/tuyul.png",
-        deskripsi: "Udah pensiun nyuri, sekarang fokus investasi kripto.",
-        harga: "Rp40.000 / jam"
-      }
-    ];
-
-    function panggilSetan() {
-      const hasilDiv = document.getElementById('hasil');
-      const acak = setanList[Math.floor(Math.random() * setanList.length)];
-
-      // mainin suara
-      const sound = document.getElementById('boooSound');
-      sound.currentTime = 0;
-      sound.play();
-
-      // munculin efek kabut flash
-      const fogFlash = document.createElement('div');
-      fogFlash.className = 'fade-fog';
-      document.body.appendChild(fogFlash);
-      setTimeout(() => fogFlash.remove(), 1200);
-
-      // munculin setan random
-      hasilDiv.innerHTML = `
-        <div class="setan-card" style="margin:auto;max-width:300px;">
-          <img src="${acak.img}" alt="${acak.nama}">
-          <h3>${acak.nama}</h3>
-          <p>${acak.deskripsi}</p>
-          <span class="price">${acak.harga}</span>
-          <a class="btn" href="https://wa.me/6289516421933?text=Halo%20aku%20mau%20booking%20${encodeURIComponent(acak.nama)}%20dong!">Pesan via WhatsApp</a>
-        </div>
-      `;
-    }
-  </script>
-</body>
-</html>
+  // tampilkan hasil
+  hasilDiv.innerHTML = `
+    <div class="setan-card" style="margin:auto;max-width:300px;">
+      <img src="${acak.img}" alt="${acak.nama}">
+      <h3>${acak.nama}</h3>
+      <p>${acak.deskripsi}</p>
+      <span class="price">${acak.harga}</span>
+      <a class="btn" href="https://wa.me/6289516421933?text=Halo%20aku%20mau%20booking%20${encodeURIComponent(acak.nama)}%20dong!">Pesan via WhatsApp</a>
+    </div>
+  `;
+}
+</script>
