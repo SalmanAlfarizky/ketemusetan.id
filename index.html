@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KetemuSetan.id 👁‍🗨</title>
@@ -182,8 +181,8 @@
 
   <main>
     <p class="desc">
-      Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.<br>
-      Di sini, roh, legenda, dan bayangan bersatu.<br>
+      Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.  
+      Di sini, roh, legenda, dan bayangan bersatu.  
       Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...
     </p>
 
@@ -196,17 +195,18 @@
   </footer>
 
   <script>
-    // === PARTIKEL MERAH ===
+    // === PARTIKEL AURA MERAH ===
     for (let i = 0; i < 70; i++) {
       const p = document.createElement('div');
       p.classList.add('particle');
       p.style.left = Math.random() * 100 + 'vw';
       p.style.animationDuration = (6 + Math.random() * 8) + 's';
       p.style.animationDelay = (Math.random() * 10) + 's';
+      p.style.width = p.style.height = (3 + Math.random() * 6) + 'px';
       document.body.appendChild(p);
     }
 
-    // === FITUR ACAK SETAN ===
+    // === FITUR ACAC SETAN ===
     const setanList = [
       "👻 Kuntilanak — tangisnya mengantar jiwa yang hilang arah.",
       "💀 Pocong — menunggu tali kafan dilepas, tapi tak pernah selesai.",
@@ -215,16 +215,14 @@
       "🌑 Leak — makhluk malam yang menari di atas api kehidupan.",
       "🕷️ Wewe Gombel — melindungi anak hilang, tapi membenci orang dewasa."
     ];
-
     const resultDiv = document.getElementById('result');
     document.getElementById('summonBtn').addEventListener('click', () => {
       const randomSetan = setanList[Math.floor(Math.random() * setanList.length)];
       resultDiv.innerHTML = randomSetan;
       resultDiv.style.animation = 'none';
-      void resultDiv.offsetWidth; // reset animasi
+      void resultDiv.offsetWidth;
       resultDiv.style.animation = 'appear 0.8s ease';
     });
   </script>
-
 </body>
 </html>
