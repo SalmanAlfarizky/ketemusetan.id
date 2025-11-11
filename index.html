@@ -51,9 +51,12 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 600px;
       margin: 0 auto;
       padding: 50px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .desc {
       font-size: 1.1rem;
@@ -81,7 +84,7 @@
     }
 
     .result {
-      margin-top: 60px;
+      margin-top: 20px;
       font-size: 1.5rem;
       font-family: 'Cinzel', serif;
       color: #ff3c3c;
@@ -89,12 +92,12 @@
       animation: appear 0.8s ease;
     }
     @keyframes appear {
-      from {opacity: 0; transform: scale(0.9);}
+      from {opacity: 0; transform: scale(0.95);}
       to {opacity: 1; transform: scale(1);}
     }
 
     .setan-img {
-      margin-top: 25px;
+      margin-top: 30px;
       width: 220px;
       height: 220px;
       border-radius: 10px;
@@ -133,8 +136,8 @@
     </p>
 
     <button id="summonBtn">🔮 Panggil Setan Acak</button>
-    <div class="result" id="result"></div>
     <img id="setanImg" class="setan-img" style="display:none;" />
+    <div class="result" id="result"></div>
   </main>
 
   <footer>
@@ -142,55 +145,31 @@
   </footer>
 
   <script>
-    // === DATA SETAN ===
     const setanList = [
-      {
-        nama: "👻 Kuntilanak",
-        deskripsi: "Tangisnya mengantar jiwa yang hilang arah.",
-        foto: "https://i.pinimg.com/736x/29/07/7a/29077a6e2d97b28e1d5d8e6c88212e03.jpg"
-      },
-      {
-        nama: "💀 Pocong",
-        deskripsi: "Menunggu tali kafan dilepas, tapi tak pernah selesai.",
-        foto: "https://i.pinimg.com/736x/9d/ba/ea/9dbaeac7483b5059a42ccdcbbcb55ac0.jpg"
-      },
-      {
-        nama: "🕯 Genderuwo",
-        deskripsi: "Penunggu pohon besar yang menyukai aroma darah.",
-        foto: "https://i.pinimg.com/736x/88/28/29/8828290f1c38db7a3f5634d2bdbf7df7.jpg"
-      },
-      {
-        nama: "🩸 Tuyul",
-        deskripsi: "Kecil, cepat, dan haus akan emas manusia.",
-        foto: "https://i.pinimg.com/736x/07/57/86/0757862d2a7e7de5ff13a15335e15a2e.jpg"
-      },
-      {
-        nama: "🌑 Leak",
-        deskripsi: "Makhluk malam yang menari di atas api kehidupan.",
-        foto: "https://i.pinimg.com/736x/5b/35/3f/5b353f73939ab4edb703b3cf7c02dfe4.jpg"
-      },
-      {
-        nama: "🕷 Wewe Gombel",
-        deskripsi: "Melindungi anak hilang, tapi membenci orang dewasa.",
-        foto: "https://i.pinimg.com/736x/15/bc/3e/15bc3e537ce733c8dd7357cbd51c6e32.jpg"
-      }
+      { nama: "👻 Kuntilanak", deskripsi: "Tangisnya mengantar jiwa yang hilang arah.", foto: "https://i.pinimg.com/736x/29/07/7a/29077a6e2d97b28e1d5d8e6c88212e03.jpg" },
+      { nama: "💀 Pocong", deskripsi: "Menunggu tali kafan dilepas, tapi tak pernah selesai.", foto: "https://i.pinimg.com/736x/9d/ba/ea/9dbaeac7483b5059a42ccdcbbcb55ac0.jpg" },
+      { nama: "🕯 Genderuwo", deskripsi: "Penunggu pohon besar yang menyukai aroma darah.", foto: "https://i.pinimg.com/736x/88/28/29/8828290f1c38db7a3f5634d2bdbf7df7.jpg" },
+      { nama: "🩸 Tuyul", deskripsi: "Kecil, cepat, dan haus akan emas manusia.", foto: "https://i.pinimg.com/736x/07/57/86/0757862d2a7e7de5ff13a15335e15a2e.jpg" },
+      { nama: "🌑 Leak", deskripsi: "Makhluk malam yang menari di atas api kehidupan.", foto: "https://i.pinimg.com/736x/5b/35/3f/5b353f73939ab4edb703b3cf7c02dfe4.jpg" },
+      { nama: "🕷 Wewe Gombel", deskripsi: "Melindungi anak hilang, tapi membenci orang dewasa.", foto: "https://i.pinimg.com/736x/15/bc/3e/15bc3e537ce733c8dd7357cbd51c6e32.jpg" }
     ];
 
     const resultDiv = document.getElementById('result');
     const setanImg = document.getElementById('setanImg');
     const summonBtn = document.getElementById('summonBtn');
 
-  summonBtn.addEventListener('click', () => {
-  const random = setanList[Math.floor(Math.random() * setanList.length)];
-  resultDiv.innerHTML = `${random.nama} — ${random.deskripsi}`;
-  setanImg.src = random.foto;
-  setanImg.style.display = 'block';
-  resultDiv.style.animation = 'none';
-  setanImg.style.animation = 'none';
-  void resultDiv.offsetWidth;
-  resultDiv.style.animation = 'appear 0.8s ease';
-  setanImg.style.animation = 'fadeIn 0.8s ease';
-
+    summonBtn.addEventListener('click', () => {
+      const random = setanList[Math.floor(Math.random() * setanList.length)];
+      setanImg.src = random.foto;
+      setanImg.style.display = 'block';
+      resultDiv.innerHTML = `${random.nama} — ${random.deskripsi}`;
+      
+      // reset animasi
+      resultDiv.style.animation = 'none';
+      setanImg.style.animation = 'none';
+      void resultDiv.offsetWidth;
+      resultDiv.style.animation = 'appear 0.8s ease';
+      setanImg.style.animation = 'fadeIn 0.8s ease';
     });
   </script>
 </body>
