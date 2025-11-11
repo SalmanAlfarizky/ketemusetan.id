@@ -1,263 +1,81 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KetemuSetan.id 👁‍🗨</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      background: radial-gradient(circle at center, #0a0a0a 0%, #000 80%);
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+<main>
+  <p class="desc">
+    Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.  
+    Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...
+  </p>
 
-    .logo-ui {
-      position: fixed;
-      top: 20px;
-      right: 25px;
-      width: 70px;
-      opacity: 0.95;
-      filter: drop-shadow(0 0 15px #ff0000b0);
-      transition: all 0.3s ease;
-    }
-    .logo-ui:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 30px #ff2020);
-    }
+  <button id="summonBtn" class="pulse-btn">🔮 Panggil Setan Acak</button>
 
-    header {
-      padding-top: 120px;
-      color: #ff2e2e;
-      font-family: 'Cinzel', serif;
-      text-shadow: 0 0 25px #ff0000b0;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      letter-spacing: 2px;
-    }
-    header p {
-      color: #d0d0d0;
-      font-size: 1rem;
-      margin-top: 6px;
-      letter-spacing: 1px;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 25px;
-    }
-    .desc {
-      font-size: 1.1rem;
-      color: #eee;
-      line-height: 1.8;
-      margin-bottom: 50px;
-    }
-
-    button {
-      background: linear-gradient(145deg, #7a0000, #ff1a1a);
-      border: none;
-      color: white;
-      font-size: 1.3rem;
-      padding: 18px 50px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-family: 'Cinzel', serif;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 40px #ff000060;
-    }
-    button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 100px #ff0000a0;
-    }
-
-    .result {
-      margin-top: 60px;
-      font-size: 1.5rem;
-      font-family: 'Cinzel', serif;
-      color: #ff3c3c;
-      text-shadow: 0 0 15px #ff0000cc;
-      animation: appear 0.8s ease;
-    }
-    @keyframes appear {
-      from {opacity: 0; transform: scale(0.9);}
-      to {opacity: 1; transform: scale(1);}
-    }
-
-    .setan-img {
-      margin-top: 25px;
-      width: 220px;
-      height: 220px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 0 25px #ff000060;
-      animation: fadeIn 0.8s ease;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.95);}
-      to {opacity: 1; transform: scale(1);}
-    }
-
-    footer {
-      text-align: center;
-      color: #777;
-      font-size: 0.9rem;
-      padding: 30px 0;
-    }
-  </style>
-</head>
-<body>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Universitas_Indonesia_%28emblem_only%29.svg"
-       alt="Logo Universitas Indonesia" class="logo-ui">
-
-  <header>
-    <h1>KetemuSetan.id</h1>
-    <p>Antara dunia nyata dan tak kasat mata.</p>
-  </header>
-
-  <main>
-    <p class="desc">
-      Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.  
-      Di sini, roh, legenda, dan bayangan bersatu.  
-      Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...
-    </p>
-
-    <button id="summonBtn">🔮 Panggil Setan Acak</button>
-    <div class="result" id="result"></div>
-    <img id="setanImg" class="setan-img" style="display:none;" />
-  </main>
-
-  <footer>
-    © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
-  </footer>
-
-  <script>
-    // === DATA SETAN ===
-    const setanList = [
-      <!-- === SCRIPT === -->
-<script>
-  // === PARTIKEL AURA MERAH ===
-  for (let i = 0; i < 70; i++) {
-    const p = document.createElement('div');
-    p.classList.add('particle');
-    p.style.left = Math.random() * 100 + 'vw';
-    p.style.animationDuration = (6 + Math.random() * 8) + 's';
-    p.style.animationDelay = (Math.random() * 10) + 's';
-    p.style.width = p.style.height = (3 + Math.random() * 6) + 'px';
-    document.body.appendChild(p);
-  }
-
-  // === FITUR ACAK SETAN ===
-  const setanList = [
-    {
-      nama: "👻 Kuntilanak",
-      deskripsi: "Tangisnya mengantar jiwa yang hilang arah.",
-      gambar: "https://i.pinimg.com/originals/8b/69/a1/8b69a17df0cfeb7f4e72ec00ad3b1e71.jpg"
-    },
-    {
-      nama: "💀 Pocong",
-      deskripsi: "Menunggu tali kafan dilepas, tapi tak pernah selesai.",
-      gambar: "https://i.pinimg.com/originals/4c/b0/7a/4cb07a1c1c2ff4e7da083a3161274c0a.jpg"
-    },
-    {
-      nama: "🕯️ Genderuwo",
-      deskripsi: "Penunggu pohon besar yang menyukai aroma darah.",
-      gambar: "https://i.pinimg.com/originals/53/9e/1f/539e1fbd96e45cf6d536dd73fdbf97f3.jpg"
-    },
-    {
-      nama: "🩸 Tuyul",
-      deskripsi: "Kecil, cepat, dan haus akan emas manusia.",
-      gambar: "https://i.pinimg.com/originals/a3/5a/7c/a35a7ce9f259ba40f88e6176467e7b5a.jpg"
-    },
-    {
-      nama: "🌑 Leak",
-      deskripsi: "Makhluk malam yang menari di atas api kehidupan.",
-      gambar: "https://i.pinimg.com/originals/56/5e/40/565e406814c65ad319ff61204ef15ea7.jpg"
-    },
-    {
-      nama: "🕷️ Wewe Gombel",
-      deskripsi: "Melindungi anak hilang, tapi membenci orang dewasa.",
-      gambar: "https://i.pinimg.com/originals/9c/59/f5/9c59f5b56a1c0fca244ff2e1579de58e.jpg"
-    }
-  ];
-
-  const resultDiv = document.getElementById('result');
-  const summonBtn = document.getElementById('summonBtn');
-
-  summonBtn.addEventListener('click', () => {
-    const randomSetan = setanList[Math.floor(Math.random() * setanList.length)];
-    resultDiv.innerHTML = `
-      <div class="setan-card">
-        <img src="${randomSetan.gambar}" alt="${randomSetan.nama}">
-        <h2>${randomSetan.nama}</h2>
-        <p>${randomSetan.deskripsi}</p>
-      </div>
-    `;
-    resultDiv.style.animation = 'none';
-    void resultDiv.offsetWidth;
-    resultDiv.style.animation = 'appear 0.8s ease';
-  });
-</script>
+  <div class="setan-card" id="setanCard" style="display:none;">
+    <h2 class="setan-name" id="setanName"></h2>
+    <img id="setanImg" class="setan-img" />
+    <p class="setan-desc" id="setanDesc"></p>
+  </div>
+</main>
 
 <style>
-  .setan-card {
-    background: rgba(20, 0, 0, 0.75);
-    border: 1px solid #ff000055;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 400px;
-    margin: 50px auto 0;
-    box-shadow: 0 0 40px #ff000040;
-    animation: fadeIn 0.8s ease;
+  .pulse-btn {
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 40px #ff000080; }
+    50% { transform: scale(1.05); box-shadow: 0 0 80px #ff0000a0; }
+    100% { transform: scale(1); box-shadow: 0 0 40px #ff000080; }
   }
 
-  .setan-card img {
-    width: 100%;
+  .setan-card {
+    margin-top: 50px;
+    padding: 25px;
+    background: rgba(20,0,0,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 50px #ff0000a0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: cardAppear 0.8s ease;
+  }
+  @keyframes cardAppear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .setan-name {
+    font-size: 2rem;
+    color: #ff4d4d;
+    text-shadow: 0 0 20px #ff0000cc;
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+  }
+
+  .setan-img {
+    width: 300px;
+    height: 300px;
     border-radius: 15px;
-    box-shadow: 0 0 20px #ff000060;
+    object-fit: cover;
+    box-shadow: 0 0 35px #ff0000a0;
     margin-bottom: 20px;
   }
 
-  .setan-card h2 {
-    font-family: 'Cinzel', serif;
-    color: #ff3c3c;
-    margin-bottom: 10px;
-  }
-
-  .setan-card p {
-    color: #ddd;
-    font-size: 1rem;
+  .setan-desc {
+    font-size: 1.2rem;
+    color: #ffcccc;
+    max-width: 90%;
     line-height: 1.6;
   }
 </style>
 
-    ];
+<script>
+  const summonBtn = document.getElementById('summonBtn');
+  const setanCard = document.getElementById('setanCard');
+  const setanName = document.getElementById('setanName');
+  const setanDesc = document.getElementById('setanDesc');
+  const setanImg = document.getElementById('setanImg');
 
-    const resultDiv = document.getElementById('result');
-    const setanImg = document.getElementById('setanImg');
-    const summonBtn = document.getElementById('summonBtn');
-
-    summonBtn.addEventListener('click', () => {
-      const random = setanList[Math.floor(Math.random() * setanList.length)];
-      resultDiv.innerHTML = `${random.nama} — ${random.deskripsi}`;
-      setanImg.src = random.foto;
-      setanImg.style.display = 'block';
-      resultDiv.style.animation = 'none';
-      setanImg.style.animation = 'none';
-      void resultDiv.offsetWidth;
-      resultDiv.style.animation = 'appear 0.8s ease';
-      setanImg.style.animation = 'fadeIn 0.8s ease';
-    });
-  </script>
-</body>
-</html>
+  summonBtn.addEventListener('click', () => {
+    const randomSetan = setanList[Math.floor(Math.random() * setanList.length)];
+    setanName.textContent = randomSetan.nama;
+    setanDesc.textContent = randomSetan.deskripsi;
+    setanImg.src = randomSetan.foto;
+    setanCard.style.display = 'flex';
+  });
+</script>
