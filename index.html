@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KetemuSetan.id 👁‍🗨</title>
-
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
     html, body {
@@ -16,22 +14,19 @@
       font-family: 'Poppins', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      height: 100%;
     }
 
-    /* === BACKGROUND HUTAN + GRADASI === */
+    /* === BACKGROUND HUTAN === */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(30,0,0,0.6), rgba(0,0,0,0.9)),
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      filter: brightness(0.3) contrast(1.2);
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      filter: brightness(0.25) contrast(1.15);
       z-index: -4;
     }
 
-    /* === LAPISAN KABUT 1 === */
+    /* === LAPISAN KABUT === */
     body::after {
       content: "";
       position: fixed;
@@ -45,22 +40,6 @@
     @keyframes fogMove {
       from {background-position: 0 0;}
       to {background-position: -2000px 0;}
-    }
-
-    /* === KABUT LAPISAN 2 === */
-    .fog-layer {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url('https://raw.githubusercontent.com/emmelleppi/foggy-background/main/fog-texture.png') repeat;
-      background-size: 900px;
-      opacity: 0.25;
-      animation: fogMoveReverse 120s linear infinite;
-      z-index: -2;
-    }
-    @keyframes fogMoveReverse {
-      from {background-position: 0 0;}
-      to {background-position: 2000px 0;}
     }
 
     /* === LOGO UI === */
@@ -79,47 +58,47 @@
       filter: drop-shadow(0 0 30px #ff2020);
     }
 
-    /* === CONTAINER UTAMA === */
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      min-height: 100vh;
-      padding: 100px 20px 150px;
-      position: relative;
-      z-index: 2;
-    }
-
     /* === HEADER === */
-    header h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 3rem;
+    header {
+      text-align: center;
+      padding-top: 120px;
       color: #ff2e2e;
+      font-family: 'Cinzel', serif;
       text-shadow: 0 0 25px #ff0000b0;
       animation: fadeInDown 2s ease-out;
-      margin-bottom: 10px;
+      z-index: 1;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 2px;
     }
     header p {
       color: #d0d0d0;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      margin-top: 6px;
       letter-spacing: 1px;
-      animation: fadeInDown 2s ease-out;
     }
     @keyframes fadeInDown {
       from {opacity: 0; transform: translateY(-30px);}
       to {opacity: 1; transform: translateY(0);}
     }
 
-    /* === DESKRIPSI === */
+    /* === CONTENT === */
+    main {
+      max-width: 850px;
+      margin: 120px auto 200px;
+      text-align: center;
+      padding: 0 25px;
+      position: relative;
+      z-index: 2;
+    }
     .desc {
-      max-width: 750px;
-      margin: 60px auto;
       font-size: 1.15rem;
       color: #eee;
       line-height: 1.9;
       text-shadow: 0 0 8px #200000;
+      margin-bottom: 80px;
       animation: fadeIn 2.5s ease;
     }
     @keyframes fadeIn {
@@ -127,7 +106,7 @@
       to {opacity: 1;}
     }
 
-    /* === TOMBOL === */
+    /* === BUTTON === */
     button {
       background: linear-gradient(145deg, #7a0000, #ff1a1a);
       border: none;
@@ -138,24 +117,24 @@
       cursor: pointer;
       font-family: 'Cinzel', serif;
       letter-spacing: 1px;
-      transition: all 0.4s ease, transform 0.2s ease-in-out;
+      transition: all 0.3s ease;
       box-shadow: 0 0 40px #ff000060;
-      margin-top: 20px;
+      z-index: 2;
+      position: relative;
     }
     button:hover {
-      transform: scale(1.15) rotate(-1deg);
+      transform: scale(1.1);
       box-shadow: 0 0 100px #ff0000a0;
     }
 
     /* === HASIL SETAN === */
     .result {
-      margin-top: 60px;
+      margin-top: 70px;
       font-size: 1.6rem;
       font-family: 'Cinzel', serif;
       color: #ff3c3c;
       text-shadow: 0 0 15px #ff0000cc;
       animation: appear 0.8s ease;
-      min-height: 50px;
     }
     @keyframes appear {
       from {opacity: 0; transform: scale(0.9);}
@@ -172,7 +151,7 @@
       border-radius: 50%;
       box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
       animation: floatUp linear infinite;
-      z-index: -1;
+      z-index: -2;
     }
     @keyframes floatUp {
       0% {transform: translateY(0) scale(0.8); opacity: 0.8;}
@@ -184,37 +163,33 @@
       text-align: center;
       color: #777;
       font-size: 0.9rem;
-      padding: 40px 20px;
+      padding-bottom: 60px;
       z-index: 2;
       position: relative;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="fog-layer"></div>
-
+  <!-- Logo Universitas Indonesia -->
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Universitas_Indonesia_%28emblem_only%29.svg"
        alt="Logo Universitas Indonesia" class="logo-ui">
 
-  <div class="container">
-    <header>
-      <h1>KetemuSetan.id</h1>
-      <p>Antara dunia nyata dan tak kasat mata.</p>
-    </header>
+  <header>
+    <h1>KetemuSetan.id</h1>
+    <p>Antara dunia nyata dan tak kasat mata.</p>
+  </header>
 
-    <main>
-      <p class="desc">
-        Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.<br>
-        Di sini, roh, legenda, dan bayangan bersatu.<br>
-        Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...
-      </p>
+  <main>
+    <p class="desc">
+      Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.  
+      Di sini, roh, legenda, dan bayangan bersatu.  
+      Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...
+    </p>
 
-      <button id="summonBtn">🔮 Panggil Setan Acak</button>
-      <div class="result" id="result"></div>
-    </main>
-  </div>
+    <button id="summonBtn">🔮 Panggil Setan Acak</button>
+    <div class="result" id="result"></div>
+  </main>
 
   <footer>
     © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
@@ -232,7 +207,7 @@
       document.body.appendChild(p);
     }
 
-    // === FITUR ACAK SETAN ===
+    // === FITUR ACAC SETAN ===
     const setanList = [
       "👻 Kuntilanak — tangisnya mengantar jiwa yang hilang arah.",
       "💀 Pocong — menunggu tali kafan dilepas, tapi tak pernah selesai.",
