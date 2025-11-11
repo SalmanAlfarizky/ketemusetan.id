@@ -182,8 +182,8 @@
 
   <main>
     <p class="desc">
-      Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.  
-      Di sini, roh, legenda, dan bayangan bersatu.  
+      Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri.<br>
+      Di sini, roh, legenda, dan bayangan bersatu.<br>
       Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...
     </p>
 
@@ -195,20 +195,18 @@
     © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
   </footer>
 
- <script>
-for (let i = 0; i < 70; i++) {
-  const p = document.createElement('div');
-  p.classList.add('particle');
-  p.style.left = Math.random() * 100 + 'vw';
-  p.style.animationDuration = (6 + Math.random() * 8) + 's';
-  p.style.animationDelay = (Math.random() * 10) + 's';
-  document.body.appendChild(p);
-}
-</script>
-
+  <script>
+    // === PARTIKEL MERAH ===
+    for (let i = 0; i < 70; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDuration = (6 + Math.random() * 8) + 's';
+      p.style.animationDelay = (Math.random() * 10) + 's';
+      document.body.appendChild(p);
     }
 
-    // === FITUR ACAC SETAN ===
+    // === FITUR ACAK SETAN ===
     const setanList = [
       "👻 Kuntilanak — tangisnya mengantar jiwa yang hilang arah.",
       "💀 Pocong — menunggu tali kafan dilepas, tapi tak pernah selesai.",
@@ -217,14 +215,16 @@ for (let i = 0; i < 70; i++) {
       "🌑 Leak — makhluk malam yang menari di atas api kehidupan.",
       "🕷️ Wewe Gombel — melindungi anak hilang, tapi membenci orang dewasa."
     ];
+
     const resultDiv = document.getElementById('result');
     document.getElementById('summonBtn').addEventListener('click', () => {
       const randomSetan = setanList[Math.floor(Math.random() * setanList.length)];
       resultDiv.innerHTML = randomSetan;
       resultDiv.style.animation = 'none';
-      void resultDiv.offsetWidth;
+      void resultDiv.offsetWidth; // reset animasi
       resultDiv.style.animation = 'appear 0.8s ease';
     });
   </script>
+
 </body>
 </html>
