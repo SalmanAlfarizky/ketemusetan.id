@@ -6,121 +6,181 @@
   <title>KetemuSetan.id 👁‍🗨</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at center, #000000 50%, #1a0000 100%);
-      color: #f8f8f8;
-      overflow-x: hidden;
+      color: #f0eaea;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+      height: 100vh;
     }
 
+    /* ===== BACKGROUND LAYERS ===== */
+    .bg-layer {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .moon {
+      position: absolute;
+      top: 10%;
+      left: 70%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #c9c9c9 40%, #999 70%, transparent 80%);
+      box-shadow: 0 0 100px 20px #ff000015;
+      animation: pulse 6s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 80px 15px #ff000030; }
+      50% { box-shadow: 0 0 130px 25px #ff000060; }
+    }
+
+    .forest {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 35%;
+      background: url('https://i.ibb.co/QMdDtfk/dark-forest-silhouette.png') repeat-x bottom;
+      background-size: cover;
+      opacity: 0.4;
+      animation: forestMove 60s linear infinite;
+    }
+    @keyframes forestMove {
+      from { background-position: 0 0; }
+      to { background-position: -1000px 0; }
+    }
+
+    .fog {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: url('https://i.ibb.co/s1JkSLP/fog.png');
+      background-size: cover;
+      opacity: 0.08;
+      animation: fogAnim 100s linear infinite;
+    }
+    @keyframes fogAnim {
+      from { transform: translateX(0); }
+      to { transform: translateX(-1000px); }
+    }
+
+    /* ===== MAIN CONTENT ===== */
     header {
+      position: relative;
+      z-index: 2;
       text-align: center;
-      padding: 80px 20px 40px;
-      color: #ff1e1e;
+      padding-top: 80px;
+      animation: fadeDown 2s ease;
+    }
+    header h1 {
       font-family: 'Cinzel', serif;
-      text-shadow: 0 0 15px #ff0000aa;
-      letter-spacing: 3px;
-      animation: fadeDown 1.5s ease-out;
+      color: #ff2b2b;
+      font-size: 3rem;
+      text-shadow: 0 0 25px #ff000060, 0 0 60px #80000090;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+      text-shadow: 0 0 10px #400000;
     }
 
     @keyframes fadeDown {
-      from {opacity: 0; transform: translateY(-40px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     main {
-      text-align: center;
+      position: relative;
+      z-index: 2;
       max-width: 700px;
-      margin: auto;
-      padding: 0 20px;
-      animation: fadeIn 2s ease-in;
+      margin: 60px auto;
+      text-align: center;
+      animation: fadeIn 2s ease;
     }
-
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .desc {
       font-size: 1.1rem;
-      color: #ddd;
       line-height: 1.8;
-      text-shadow: 0 0 5px #550000;
-      margin-bottom: 50px;
+      color: #ddd;
+      margin-bottom: 40px;
+      text-shadow: 0 0 8px #3b0000;
     }
 
     button {
-      background: linear-gradient(145deg, #800000, #ff0000);
+      background: linear-gradient(135deg, #7a0000, #ff0000);
       border: none;
       color: white;
-      font-size: 1.1rem;
-      padding: 15px 30px;
+      padding: 15px 40px;
       border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 0 20px #ff000080;
-      transition: all 0.3s ease;
       font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 25px #ff000060;
+      transition: 0.3s ease;
     }
-
     button:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 30px #ff0000cc;
+      box-shadow: 0 0 45px #ff0000cc;
     }
 
     .result {
       margin-top: 50px;
       font-size: 1.5rem;
-      font-family: 'Cinzel', serif;
       color: #ff3c3c;
-      text-shadow: 0 0 10px #ff0000cc;
-      animation: appear 0.8s ease;
+      font-family: 'Cinzel', serif;
+      text-shadow: 0 0 15px #ff0000cc;
+      animation: appear 1s ease;
     }
 
     @keyframes appear {
-      from {opacity: 0; transform: scale(0.9);}
-      to {opacity: 1; transform: scale(1);}
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     footer {
-      margin-top: 80px;
       text-align: center;
+      color: #777;
       font-size: 0.9rem;
-      color: #666;
+      margin-top: 80px;
       padding-bottom: 30px;
-    }
-
-    .fog {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://i.ibb.co/s1JkSLP/fog.png');
-      background-size: cover;
-      opacity: 0.08;
-      pointer-events: none;
-      animation: fogMove 60s linear infinite;
-    }
-
-    @keyframes fogMove {
-      from {background-position: 0 0;}
-      to {background-position: 2000px 0;}
+      position: relative;
+      z-index: 2;
     }
   </style>
 </head>
 <body>
-  <div class="fog"></div>
+  <!-- Latar belakang layer -->
+  <div class="bg-layer">
+    <div class="moon"></div>
+    <div class="forest"></div>
+    <div class="fog"></div>
+  </div>
 
   <header>
     <h1>KetemuSetan.id</h1>
-    <p>Berani Bertemu, Jangan Menyesal.</p>
+    <p>Antara dunia nyata dan tak kasat mata.</p>
   </header>
 
   <main>
     <p class="desc">
-      Selamat datang di <b>KetemuSetan.id</b> — portal mistis tempat para roh berkeliaran di dunia digital.
-      Temukan legenda horor dari berbagai penjuru nusantara, dan jika kau cukup berani, 
-      tekan tombol di bawah untuk <i>memanggil setan secara acak</i>.  
-      Siapa yang akan datang malam ini? Pocong, Kuntilanak... atau sesuatu yang belum pernah dikenal manusia?
+      Selamat datang di <b>KetemuSetan.id</b> — portal digital bagi mereka yang berani mengintip ke sisi gelap.  
+      Di sini, legenda urban dan roh nusantara menunggu untuk dipanggil.  
+      Tekan tombol di bawah... dan biarkan yang tak terlihat menampakkan diri.
     </p>
 
     <button id="summonBtn">🔮 Panggil Setan Acak</button>
@@ -129,26 +189,28 @@
   </main>
 
   <footer>
-    © 2025 KetemuSetan.id | Dunia lain kini hanya sejauh satu klik.
+    © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
   </footer>
 
   <script>
     const setanList = [
-      "👻 Kuntilanak — suara tangisnya di malam hari pertanda ia sudah dekat...",
-      "💀 Pocong — melompat dari liang lahat mencari teman terakhirnya...",
-      "🕯️ Genderuwo — makhluk besar berbulu yang suka menggoda manusia...",
-      "🩸 Tuyul — si pencuri kecil dari dunia gaib, selalu mencari uang dan tawa...",
-      "🌑 Leak — penyihir Bali berwujud menyeramkan di bawah sinar bulan...",
-      "🕷️ Wewe Gombel — penjaga anak-anak hilang yang hatinya penuh dendam..."
+      "👻 Kuntilanak — tangisnya menembus malam, menandai kehadirannya.",
+      "💀 Pocong — melompat tanpa arah, mencari janji yang belum ditepati.",
+      "🕯️ Genderuwo — sosok besar berbulu, suka menampakkan diri di antara pepohonan.",
+      "🩸 Tuyul — makhluk kecil dengan tawa licik di balik bayanganmu.",
+      "🌑 Leak — terbang di bawah bulan, haus akan jiwa manusia.",
+      "🕷️ Wewe Gombel — dendamnya pada dunia manusia tak pernah padam."
     ];
 
-    document.getElementById('summonBtn').addEventListener('click', () => {
+    const resultDiv = document.getElementById('result');
+    const btn = document.getElementById('summonBtn');
+
+    btn.addEventListener('click', () => {
       const randomSetan = setanList[Math.floor(Math.random() * setanList.length)];
-      const resultDiv = document.getElementById('result');
       resultDiv.innerHTML = randomSetan;
       resultDiv.style.animation = 'none';
-      void resultDiv.offsetWidth; // reset animation
-      resultDiv.style.animation = 'appear 0.8s ease';
+      void resultDiv.offsetWidth;
+      resultDiv.style.animation = 'appear 1s ease';
     });
   </script>
 </body>
