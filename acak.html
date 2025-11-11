@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setan Acak - KetemuSetan.id</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    const setanList = [
+      {
+        nama: "Pocong Pusing",
+        deskripsi: "Mantan mahasiswa abadi yang tersesat di antara dunia dan revisi dosen.",
+        harga: "Rp 66.666/jam",
+        img: "https://i.ibb.co/df7bZnT/pocong-cartoon.png"
+      },
+      {
+        nama: "Kuntilanak Karaoke",
+        deskripsi: "Suaranya tinggi banget, bisa pecahin kaca — dan juga hatimu.",
+        harga: "Rp 99.999/jam",
+        img: "https://i.ibb.co/sbfpdsG/kuntilanak-cartoon.png"
+      },
+      {
+        nama: "Tuyul Tajir",
+        deskripsi: "Pencuri dompet legendaris, kini jadi konsultan keuangan dunia gaib.",
+        harga: "Rp 88.888/jam",
+        img: "https://i.ibb.co/ss2CFHt/tuyul-cartoon.png"
+      },
+      {
+        nama: "Genderuwo Gemoy",
+        deskripsi: "Badan gede, hati lembut. Siap bantu pindahan atau pelukan tengah malam.",
+        harga: "Rp 77.777/jam",
+        img: "https://i.ibb.co/JpsLkh9/genderuwo-cartoon.png"
+      }
+    ];
+
+    function panggilSetan() {
+      const random = Math.floor(Math.random() * setanList.length);
+      const s = setanList[random];
+      const waLink = `https://wa.me/6289516421933?text=Halo%20aku%20mau%20sewa%20${encodeURIComponent(s.nama)}!`;
+      document.getElementById("hasil").innerHTML = `
+        <div class="setan-card fadeIn">
+          <img src="${s.img}" alt="${s.nama}">
+          <h3>${s.nama}</h3>
+          <p>${s.deskripsi}</p>
+          <span class="price">${s.harga}</span>
+          <a href="${waLink}" target="_blank" class="btn">Sewa Sekarang</a>
+        </div>
+      `;
+    }
+  </script>
+  <style>
+    .fadeIn { animation: fadeIn 0.7s ease-in; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fog"></div>
+
+  <header>
+    <h1>👻 KetemuSetan.id</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="daftar-setan.html">Daftar Setan</a>
+      <a href="asal-usul.html">Asal Usul</a>
+      <a href="booking.html">Booking</a>
+      <a href="acak.html" class="active">Setan Acak</a>
+    </nav>
+  </header>
+
+  <main class="acak-page">
+    <h2>🎲 Panggil Setan Acak</h2>
+    <p class="intro">Berani coba peruntunganmu? Klik tombol di bawah dan lihat makhluk mana yang datang duluan malam ini...</p>
+
+    <button onclick="panggilSetan()" class="btn big-btn">🔮 PANGGIL SEKARANG</button>
+
+    <div id="hasil" class="hasil-container"></div>
+  </main>
+
+  <footer>
+    © 2025 KetemuSetan.id — Tidak bertanggung jawab atas mimpi buruk setelah pemanggilan.
+  </footer>
+</body>
+</html>
