@@ -16,58 +16,49 @@ body {
 }
 
 /* NAVBAR SAMA PERSIS DENGAN INDEX */
-/* NAVBAR SAMA EXACT DENGAN INDEX */
-nav.navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(80, 0, 0, 0.85);
-  backdrop-filter: blur(6px);
-  padding: 15px 40px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  border-bottom: 2px solid red;
-  box-shadow: 0 0 15px #ff000030;
+
+nav {
+   width:100%;
+    background-color:#111;
+    border-bottom:3px solid #ff1a1a;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 50px;
+    box-shadow:0 0 15px #ff000030;
+    animation: neonBorder 2s infinite alternate;
+  }
+  @keyframes neonBorder {
+    0% { border-color: #ff1a1a; box-shadow:0 0 15px #ff000030; }
+    50% { border-color: #ff4c4c; box-shadow:0 0 30px #ff0000aa; }
+    100% { border-color: #ff1a1a; box-shadow:0 0 15px #ff000030; }
+  
 }
 
-/* kiri (logo) */
-nav .nav-left {
-  flex: 1;
-}
-nav .logo-ui {
-  height: 50px;
+nav img.logo-ui {
+  width: 60px;
   filter: drop-shadow(0 0 12px #ff0000aa);
 }
 
-/* tengah (menu) */
-nav .nav-center {
-  flex: 2;
+nav ul {
   display: flex;
-  justify-content: center;
-}
-
-nav .nav-center ul {
-  display: flex;
-  gap: 35px;
   list-style: none;
+  gap: 35px;
 }
-
-nav .nav-center ul li a {
+nav ul li a {
+  color: #ff3c3c;
   font-family: 'Cinzel', serif;
-  font-weight: 700;
   font-size: 1.15rem;
-  color: #fff;
-  letter-spacing: 1px;
   text-decoration: none;
   transition: 0.3s;
 }
-
-nav .nav-center ul li a:hover {
-  color: red;
-  text-shadow: 0 0 10px red;
+nav ul li a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px red;
 }
 
 
