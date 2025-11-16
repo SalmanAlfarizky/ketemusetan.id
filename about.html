@@ -26,18 +26,25 @@ body {
 
 /* Navbar sama persis */
 nav {
-  width: 100%;
-  background-color: #111;
-  border-bottom: 3px solid red;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 50px;
-  box-shadow: 0 0 15px #ff000030;
+   width:100%;
+    background-color:#111;
+    border-bottom:3px solid #ff1a1a;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 50px;
+    box-shadow:0 0 15px #ff000030;
+    animation: neonBorder 2s infinite alternate;
+  }
+  @keyframes neonBorder {
+    0% { border-color: #ff1a1a; box-shadow:0 0 15px #ff000030; }
+    50% { border-color: #ff4c4c; box-shadow:0 0 30px #ff0000aa; }
+    100% { border-color: #ff1a1a; box-shadow:0 0 15px #ff000030; }
+  }
 }
 
 nav img.logo-ui {
