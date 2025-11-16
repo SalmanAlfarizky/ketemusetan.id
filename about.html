@@ -3,174 +3,193 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About | KetemuSetan.id 👁‍🗨</title>
+<title>About – KetemuSetan.id</title>
 
-<!-- Font & style global -->
+<!-- Fonts & CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <style>
-  body {
-    background: radial-gradient(circle at center, #0a0a0a 0%, #000 80%);
-    color: #fff;
-    font-family:'Poppins', sans-serif;
-    text-align:center;
-    padding-top:140px; /* supaya ga ketutup navbar */
-  }
+/* Background sama seperti index */
+body {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-image: url("img/download.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  padding-top: 120px;
+}
 
-  h1 {
-    font-family:'Cinzel', serif;
-    font-size:3rem;
-    color:#ff1a1a;
-    text-shadow:0 0 25px #ff0000b0;
-    margin-bottom:15px;
-  }
+/* Navbar sama persis */
+nav {
+  width: 100%;
+  background-color: #111;
+  border-bottom: 3px solid red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  box-shadow: 0 0 15px #ff000030;
+}
 
-  .desc {
-    max-width:750px;
-    margin:0 auto;
-    color:#ccc;
-    font-size:1.1rem;
-    line-height:1.8;
-    padding:0 20px;
-  }
+nav img.logo-ui {
+  width: 60px;
+  filter: drop-shadow(0 0 12px #ff0000aa);
+}
 
-  /* CREATOR SECTION */
-  .creators {
-    margin-top:60px;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
-    max-width:750px;
-    margin-left:auto;
-    margin-right:auto;
-  }
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+nav ul li a {
+  color: #ff3c3c;
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px red;
+}
 
-  .creator-card {
-    background:rgba(20,0,0,0.55);
-    padding:20px;
-    border-radius:12px;
-    border:1px solid #900;
-    box-shadow:0 0 20px #ff000040;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    transition:0.3s ease;
-  }
+/* Judul About */
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  color: #ff2e2e;
+  text-shadow: 0 0 25px rgba(255,0,0,0.7);
+  margin-bottom: 15px;
+}
 
-  .creator-card:hover {
-    transform:scale(1.03);
-    box-shadow:0 0 35px #ff000090;
-  }
+/* Subtitle */
+.subtitle {
+  color: #ddd;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
 
-  .creator-photo {
-    width:90px;
-    height:90px;
-    border-radius:10px;
-    object-fit:cover;
-    box-shadow:0 0 15px #800000;
-  }
+/* Container Creator */
+.creators {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
 
-  .creator-info {
-    text-align:left;
-  }
+.card {
+  background: rgba(0,0,0,0.75);
+  padding: 20px;
+  width: 240px;
+  border-radius: 15px;
+  border: 2px solid #700000;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255,0,0,0.3);
+}
 
-  .creator-info h3 {
-    font-family:'Cinzel', serif;
-    margin-bottom:5px;
-    color:#ff3c3c;
-  }
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
 
-  .creator-info p {
-    margin-bottom:8px;
-    font-size:0.95rem;
-    color:#ddd;
-  }
+.card h3 {
+  font-family: 'Cinzel', serif;
+  color: #ff4444;
+  margin-bottom: 5px;
+}
 
-  .creator-info a {
-    color:#ff4c4c;
-    text-decoration:none;
-    font-family:'Cinzel', serif;
-  }
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
 
-  .creator-info a:hover {
-    color:#fff;
-    text-shadow:0 0 10px red;
-  }
+.card a {
+  color: #ff4c4c;
+  font-weight: bold;
+  text-decoration: none;
+}
+.card a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px red;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(80,0,0,0.7);
+  border-top: 2px solid red;
+  margin-top: 60px;
+}
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
 <nav>
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Universitas_Indonesia_%28emblem_only%29.svg"
-       alt="Logo UI" class="logo-ui">
+       class="logo-ui">
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" style="color:white; text-shadow:0 0 15px red;">About</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="katalog.html">Katalog</a></li>
     <li><a href="kontak.html">Kontak</a></li>
   </ul>
 </nav>
 
-<h1>About</h1>
+<!-- Judul -->
+<h1>About Us</h1>
+<p class="subtitle">Empat pencipta di balik dunia mistis KetemuSetan.id</p>
 
-<p class="desc">
-  <b>KetemuSetan.id</b> adalah proyek yang menggabungkan unsur mistis, humor, dan interaksi digital.
-  Website ini dibuat untuk memberikan pengalaman seru dalam memanggil makhluk halus secara virtual,
-  tanpa menghilangkan nuansa horror khas Indonesia.
-</p>
-
-<h2 style="font-family:Cinzel,serif; color:#ff1a1a; margin-top:50px; text-shadow:0 0 15px #ff000099;">
-  Para Pembuat Website
-</h2>
-
+<!-- Creator Section -->
 <div class="creators">
 
-  <!-- CREATOR 1 -->
-  <div class="creator-card">
-    <img src="https://i.pinimg.com/736x/74/25/5e/74255e2f1475a9cdee7e327480ba7e3d.jpg" class="creator-photo">
-    <div class="creator-info">
-      <h3>Salman Alfarizky</h3>
-      <p>Developer utama & pengatur alur website.</p>
-      <a href="https://instagram.com/" target="_blank">Instagram ↗</a>
-    </div>
+  <div class="card">
+    <img src="creator1.jpg">
+    <h3>Nama Creator 1</h3>
+    <p>Pembuat tampilan & efek visual.</p>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
 
-  <!-- CREATOR 2 -->
-  <div class="creator-card">
-    <img src="https://i.pinimg.com/736x/1b/57/4a/1b574ae72f04fa3d6cab537dfa3d3ec0.jpg" class="creator-photo">
-    <div class="creator-info">
-      <h3>Piel</h3>
-      <p>Desainer konsep, visual, dan sentuhan mistis.</p>
-      <a href="https://instagram.com/" target="_blank">Instagram ↗</a>
-    </div>
+  <div class="card">
+    <img src="creator2.jpg">
+    <h3>Nama Creator 2</h3>
+    <p>Penulis lore & deskripsi setan.</p>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
 
-  <!-- CREATOR 3 -->
-  <div class="creator-card">
-    <img src="https://i.pinimg.com/736x/4a/86/58/4a8658f5b469d77f28c9afd461a775e5.jpg" class="creator-photo">
-    <div class="creator-info">
-      <h3>GhoulDev</h3>
-      <p>Efek animasi & implementasi script horror.</p>
-      <a href="https://instagram.com/" target="_blank">Instagram ↗</a>
-    </div>
+  <div class="card">
+    <img src="creator3.jpg">
+    <h3>Nama Creator 3</h3>
+    <p>Developer fitur acak setan.</p>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
 
-  <!-- CREATOR 4 -->
-  <div class="creator-card">
-    <img src="https://i.pinimg.com/736x/ed/60/19/ed601987617a0c6bfba3d5f1cab3fad0.jpg" class="creator-photo">
-    <div class="creator-info">
-      <h3>NightShade</h3>
-      <p>Penulis lore, narasi, serta dunia mistis.</p>
-      <a href="https://instagram.com/" target="_blank">Instagram ↗</a>
-    </div>
+  <div class="card">
+    <img src="creator4.jpg">
+    <h3>Nama Creator 4</h3>
+    <p>UI/UX dan konsultan mistis.</p>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
 
 </div>
 
-<footer style="margin-top:60px;">
+<footer>
   © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
 </footer>
 
