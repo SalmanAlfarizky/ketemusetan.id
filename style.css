@@ -1,184 +1,102 @@
-/* Font elegan */
+/* === Fonts === */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap');
 
+/* === Reset dan Body === */
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family: 'Poppins', sans-serif;
-  background-image: url("img/download.jpg");
+  color: #fff;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  color: #fff;
-  margin: 0;
-  padding: 0;
+  text-align: center;
+  min-height: 100vh;
   overflow-x: hidden;
   position: relative;
 }
 
-/* NAVBAR SAMA PERSIS DENGAN INDEX */
-
-nav {
-   width:100%;
-    background-color:#111;
-    border-bottom:3px solid #ff1a1a;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:100;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:10px 50px;
-    box-shadow:0 0 15px #ff000030;
-    animation: neonBorder 2s infinite alternate;
-  }
-  @keyframes neonBorder {
-    0% { border-color: #ff1a1a; box-shadow:0 0 15px #ff000030; }
-    50% { border-color: #ff4c4c; box-shadow:0 0 30px #ff0000aa; }
-    100% { border-color: #ff1a1a; box-shadow:0 0 15px #ff000030; }
-  
-}
-
-nav img.logo-ui {
-  width: 60px;
-  filter: drop-shadow(0 0 12px #ff0000aa);
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-nav ul li a {
-  color: #ff3c3c;
-  font-family: 'Cinzel', serif;
-  font-size: 1.15rem;
-  text-decoration: none;
-  transition: 0.3s;
-}
-nav ul li a:hover {
-  color: #fff;
-  text-shadow: 0 0 12px red;
-}
-
-
-
-/* Overlay gelap agar teks tetap terbaca */
+/* Overlay gelap untuk semua halaman */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
   z-index: -1;
 }
 
-
-/* Bagian konten utama */
-main {
-  text-align: center;
-  padding: 60px 20px;
+/* === Navbar === */
+nav {
+  width:100%;
+  background-color:#111;
+  border-bottom:3px solid #ff1a1a;
+  position:fixed;
+  top:0; left:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 50px;
+  box-shadow:0 0 15px #ff000030;
+  animation: neonBorder 2s infinite alternate;
 }
-
-h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #ff0000;
-  text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+@keyframes neonBorder {
+  0% { border-color:#ff1a1a; box-shadow:0 0 15px #ff000030; }
+  50% { border-color:#ff4c4c; box-shadow:0 0 30px #ff0000aa; }
+  100% { border-color:#ff1a1a; box-shadow:0 0 15px #ff000030; }
 }
+nav img.logo-ui { width:60px; filter:drop-shadow(0 0 12px #ff0000aa); transition:0.3s; }
+nav img.logo-ui:hover { transform:scale(1.1); filter:drop-shadow(0 0 25px #ff2020); }
+nav ul { display:flex; list-style:none; gap:20px; }
+nav ul li a {
+  text-decoration:none; color:#ff3c3c;
+  font-family:'Cinzel', serif; font-size:1.15rem; transition:0.3s;
+}
+nav ul li a:hover { color:#fff; text-shadow:0 0 12px red; }
 
-/* Kartu setan */
+/* === Header / Main === */
+header { padding-top:120px; }
+h1 { font-family:'Cinzel', serif; font-size:2.8rem; letter-spacing:2px; color:#ff2e2e; text-shadow:0 0 25px rgba(255,0,0,0.7); margin-bottom:15px; }
+.subtitle, .desc { color:#ddd; font-size:1rem; letter-spacing:1px; margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto; }
+
+/* === Main Content === */
+main { max-width:600px; margin:0 auto; padding:50px 25px; display:flex; flex-direction:column; align-items:center; }
+button {
+  background: linear-gradient(145deg,#7a0000,#ff1a1a);
+  border:none; color:white; font-size:1.3rem; padding:18px 50px; border-radius:50px;
+  cursor:pointer; font-family:'Cinzel', serif; letter-spacing:1px; transition:all 0.3s ease;
+  box-shadow:0 0 40px #ff000060;
+}
+button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
+
+.result { margin-top:20px; font-size:1.5rem; font-family:'Cinzel', serif; color:#ff3c3c; text-shadow:0 0 15px #ff0000cc; animation:appear 0.8s ease; }
+@keyframes appear { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
+.setan-img { margin-top:30px; width:220px; height:220px; border-radius:10px; object-fit:cover; box-shadow:0 0 25px #ff000060; animation:fadeIn 0.8s ease; }
+@keyframes fadeIn { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
+
+/* === Cards (About / Creators) === */
 .card {
-  width: 300px;
-  margin: 20px auto;
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid #700000;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
-  transition: transform 0.5s ease-in-out;
-  overflow: hidden;
+  width: 240px; margin: 20px; background: rgba(0,0,0,0.75);
+  border:2px solid #700000; border-radius:15px; padding:20px;
+  text-align:center; box-shadow:0 0 25px rgba(255,0,0,0.3);
 }
+.card img { width:100%; height:240px; object-fit:cover; border-radius:10px; margin-bottom:15px; }
+.card h3 { font-family:'Cinzel', serif; color:#ff4444; margin-bottom:5px; }
+.card p { font-size:0.9rem; margin-bottom:10px; }
+.card a { color:#ff4c4c; font-weight:bold; text-decoration:none; }
+.card a:hover { color:#fff; text-shadow:0 0 10px red; }
 
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  object-fit: cover;
-}
+/* === Footer === */
+footer { text-align:center; padding:25px; background: rgba(80,0,0,0.8); border-top:2px solid red; font-size:0.9rem; color:#ddd; margin-top:60px; }
 
-.card h3 {
-  font-family: 'Cinzel', serif;
-  margin-bottom: 10px;
-  color: #ff3333;
-}
-
-.card p {
-  font-size: 0.95rem;
-}
-
-/* Tombol acak setan */
-button#acakButton {
-  background-color: #b30000;
-  border: none;
-  padding: 15px 25px;
-  font-size: 1rem;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: 'Cinzel', serif;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-button#acakButton:hover {
-  background-color: #ff0000;
-  transform: scale(1.05);
-}
-
-/* Efek animasi geser ke samping */
-.card.hidden {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.5s ease;
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(80, 0, 0, 0.8);
-  border-top: 2px solid red;
-  font-size: 0.9rem;
-  color: #ddd;
-}
-
-.glitch {
-  color: #ff1a1a;
-  font-family: 'Cinzel', serif;
-  position: relative;
-}
-
+/* === Glitch Text === */
+.glitch { color:#ff1a1a; font-family:'Cinzel', serif; position:relative; }
 .glitch::before, .glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  text-shadow: -2px 0 red;
-  animation: glitch 1s infinite;
+  content: attr(data-text); position:absolute; left:0; top:0; text-shadow:-2px 0 red;
+  animation:glitch 1s infinite;
 }
+@keyframes glitch { 0% {clip-path: inset(0 0 10% 0);} 50% {clip-path: inset(30% 0 0 0);} 100% {clip-path: inset(0 0 10% 0);} }
 
-@keyframes glitch {
-  0% { clip-path: inset(0 0 10% 0); }
-  50% { clip-path: inset(30% 0 0 0); }
-  100% { clip-path: inset(0 0 10% 0); }
-}
+/* === Creator Container === */
+.creators { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:40px; }
