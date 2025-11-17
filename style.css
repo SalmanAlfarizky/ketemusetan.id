@@ -155,7 +155,16 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
 }
 
 /* === Footer === */
-footer { text-align:center; padding:25px; background: rgba(80,0,0,0.8); border-top:2px solid red; font-size:0.9rem; color:#ddd; margin-top:60px; }
+footer {
+  background: rgba(0, 0, 0, 0.75);
+  color: #e0e0e0;
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid #5a0000; /* merah gelap, halus */
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
 
 /* === Glitch Text === */
 .glitch { color:#ff1a1a; font-family:'Cinzel', serif; position:relative; }
