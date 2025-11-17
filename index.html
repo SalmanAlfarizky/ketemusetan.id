@@ -59,5 +59,26 @@ summonBtn.addEventListener('click',()=>{
   setanImg.style.animation='fadeIn 0.8s ease';
 });
 </script>
+
+<!-- 🔊 Sound ditambahkan di sini -->
+<audio id="clickSound" src="sound/click.mp3"></audio>
+
+<script>
+  const clickSound = document.getElementById("clickSound");
+
+  function playSound() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+  }
+
+  // Sound untuk tombol panggil setan
+  document.getElementById("summonBtn").addEventListener("click", playSound);
+
+  // Sound untuk navbar
+  document.querySelectorAll("nav a").forEach(item => {
+    item.addEventListener("click", playSound);
+  });
+</script>
+
 </body>
 </html>
