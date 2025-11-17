@@ -11,9 +11,9 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   text-align: center;
-  min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+
 }
 
 /* Overlay gelap untuk semua halaman */
