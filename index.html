@@ -25,7 +25,7 @@
 
 <main>
   <button id="summonBtn">🔮 Panggil Setan Acak</button>
-  <img id="setanImg." class="setan-img" style="display:none;">
+  <img id="setanImg" class="setan-img" style="display:none;">
   <div class="result" id="result"></div>
 </main>
 
@@ -49,7 +49,7 @@ const summonBtn = document.getElementById('summonBtn');
 
 summonBtn.addEventListener('click',()=>{
   const random=setanList[Math.floor(Math.random()*setanList.length)];
-  setanImg.src=random.;
+  setanImg.src=random.foto;
   setanImg.style.display='block';
   resultDiv.innerHTML=`${random.nama} — ${random.deskripsi}`;
   resultDiv.style.animation='none';
