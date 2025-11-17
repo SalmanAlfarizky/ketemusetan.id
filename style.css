@@ -201,6 +201,10 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
   }
 }
 
+body.index main {
+  padding-bottom: 60px;
+}
+
 /* === Footer === */
 footer {
   background: rgba(0, 0, 0, 0.75);
