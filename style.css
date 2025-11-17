@@ -76,16 +76,83 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
 @keyframes fadeIn { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
 
 /* === Cards (About / Creators) === */
-.card {
-  width: 240px; margin: 20px; background: rgba(0,0,0,0.75);
-  border:2px solid #700000; border-radius:15px; padding:20px;
-  text-align:center; box-shadow:0 0 25px rgba(255,0,0,0.3);
+.creators-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 50px 20px;
 }
-.card img { width:100%; height:240px; object-fit:cover; border-radius:10px; margin-bottom:15px; }
-.card h3 { font-family:'Cinzel', serif; color:#ff4444; margin-bottom:5px; }
-.card p { font-size:0.9rem; margin-bottom:10px; }
-.card a { color:#ff4c4c; font-weight:bold; text-decoration:none; }
-.card a:hover { color:#fff; text-shadow:0 0 10px red; }
+
+.creator {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.creator.reverse {
+  flex-direction: row-reverse;
+}
+
+.creator img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #ff4444; /* outline terang */
+  box-shadow: 0 0 25px #ff000080; /* glow halus */
+}
+
+.creator .text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.creator .text h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #ff4444;
+  margin-bottom: 8px;
+}
+
+.creator .text p {
+  font-size: 1rem;
+  color: #eee;
+  margin-bottom: 5px;
+}
+
+.creator .text a {
+  color: #ff4c4c;
+  text-decoration: none;
+  font-weight: bold;
+}
+.creator .text a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px red;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .creator, .creator.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .creator img {
+    width: 200px;
+    height: 200px;
+  }
+  .creator .text {
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .creator img {
+    width: 150px;
+    height: 150px;
+  }
+  .creator .text h3 {
+    font-size: 1.2rem;
+  }
+}
 
 /* === Footer === */
 footer { text-align:center; padding:25px; background: rgba(80,0,0,0.8); border-top:2px solid red; font-size:0.9rem; color:#ddd; margin-top:60px; }
