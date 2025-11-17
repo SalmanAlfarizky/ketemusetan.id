@@ -14,15 +14,24 @@ body {
   overflow-x: hidden;
   position: relative;
 
-    /* Fade + Slide Transisi */
+ /* Fade + Slide + Glow untuk transisi halaman */
+body {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 body.show {
   opacity: 1;
   transform: translateY(0);
+  box-shadow: 0 0 0 transparent;
+}
+
+/* Saat fade-out, tambahkan glow halus */
+body.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+  box-shadow: 0 0 50px #ff444480;
 }
 
 /* Overlay gelap untuk semua halaman */
