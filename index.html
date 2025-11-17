@@ -25,7 +25,7 @@
 
 <main>
   <button id="summonBtn">🔮 Panggil Setan Acak</button>
-  <img id="setanImg" class="setan-img" style="display:none;">
+  <img id="setanImg.ir" class="setan-img" style="display:none;">
   <div class="result" id="result"></div>
 </main>
 
@@ -40,7 +40,7 @@ const setanList = [
   { nama:"🕯 Genderuwo", deskripsi:"Penunggu pohon besar yang menyukai aroma darah.", url:"img/setan/genderuwo.jpg" },
   { nama:"🩸 Tuyul", deskripsi:"Kecil, cepat, dan haus akan emas manusia.", url:"img/setan/TUYUL.jpg" },
   { nama:"🌑 Leak", deskripsi:"Makhluk malam yang menari di atas api kehidupan.", url:"img/setan/leak.jpg" },
-  { nama:"🕷 Wewe Gombel", deskripsi:"Melindungi anak hilang, tapi membenci orang dewasa.", url:"img/setan/wewe gombel.jpg" }
+  { nama:"🕷 Wewe Gombel", deskripsi:"Melindungi anak hilang, tapi membenci orang dewasa.", url:"img/setan/wewegombel.jpg" }
 ];
 
 const resultDiv = document.getElementById('result');
@@ -49,7 +49,7 @@ const summonBtn = document.getElementById('summonBtn');
 
 summonBtn.addEventListener('click',()=>{
   const random=setanList[Math.floor(Math.random()*setanList.length)];
-  setanImg.src=random.foto;
+  setanImg.src=random.url;
   setanImg.style.display='block';
   resultDiv.innerHTML=`${random.nama} — ${random.deskripsi}`;
   resultDiv.style.animation='none';
