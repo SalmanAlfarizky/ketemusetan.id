@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if(href && !href.startsWith("#")) { // link ke halaman lain
         e.preventDefault();
-        document.body.classList.remove("show"); // fade + slide-out
-        document.body.style.transform = "translateY(-20px)"; // naik sedikit saat keluar
+        // Tambahkan class fade-out
+        document.body.classList.add("fade-out");
         setTimeout(() => {
           window.location.href = href;
-        }, 600); // durasi sama dengan CSS
+        }, 600); // sama dengan durasi CSS
       }
     });
   });
