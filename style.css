@@ -70,37 +70,6 @@ nav a::before {
   transition: 0.2s ease;
 }
 
-/* Home → mata */
-nav a[href="index.html"]::before {
-  content: "👁️";
-}
-
-/* About → tengkorak */
-nav a[href="about.html"]::before {
-  content: "☠️";
-}
-
-/* Daftar Setan → hantu */
-nav a[href="katalog.html"]::before {
-  content: "👻";
-}
-
-/* Booking → darah */
-nav a[href="kontak.html"]::before {
-  content: "🩸";
-}
-
-/* Random Setan → bola mistik */
-nav a[href="random.html"]::before {
-  content: "🔮";
-}
-
-/* Hover efek glowing */
-nav a:hover::before {
-  opacity: 1;
-  text-shadow: 0 0 8px red;
-}
-
 
 /* === Header / Main === */
 header { padding-top:120px; }
