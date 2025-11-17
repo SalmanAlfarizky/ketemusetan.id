@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-image: url("img/aboutbackground.jpg");
+  background-image: url("img/download.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -47,7 +47,7 @@ nav img.logo-ui {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 35px;
+  gap: 20px;
 }
 nav ul li a {
   color: #ff3c3c;
