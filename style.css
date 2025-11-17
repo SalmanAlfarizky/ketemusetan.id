@@ -12,26 +12,17 @@ body {
   overflow-x: hidden;
   position: relative;
 
-    opacity: 0;
+   body {
+  opacity: 0; /* mulai transparan */
   transition: opacity 0.6s ease;
 }
 
 body.show {
-  opacity: 1;
+  opacity: 1; /* fade-in */
 }
 
 body.fade-out {
-  opacity: 0;
-}
-
-/* overlay untuk kegelapan tetap */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: -1;
+  opacity: 0; /* fade-out */
 }
 
 /* === Navbar === */
