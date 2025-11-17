@@ -35,12 +35,12 @@
 
 <script>
 const setanList = [
-  { nama:"👻 Kuntilanak", deskripsi:"Tangisnya mengantar jiwa yang hilang arah.", url:"img/setan/Kuntilanak.jpg" },
-  { nama:"💀 Pocong", deskripsi:"Menunggu tali kafan dilepas, tapi tak pernah selesai.", url:"img/setan/pocong.jpg" },
-  { nama:"🕯 Genderuwo", deskripsi:"Penunggu pohon besar yang menyukai aroma darah.", url:"img/setan/genderuwo.jpg" },
-  { nama:"🩸 Tuyul", deskripsi:"Kecil, cepat, dan haus akan emas manusia.", url:"img/setan/TUYUL.jpg" },
-  { nama:"🌑 Leak", deskripsi:"Makhluk malam yang menari di atas api kehidupan.", url:"img/setan/leak.jpg" },
-  { nama:"🕷 Wewe Gombel", deskripsi:"Melindungi anak hilang, tapi membenci orang dewasa.", url:"img/setan/wewegombel.jpg" }
+  { nama:"👻 Kuntilanak", deskripsi:"Tangisnya mengantar jiwa yang hilang arah.", foto:"img/setan/Kuntilanak.jpg" },
+  { nama:"💀 Pocong", deskripsi:"Menunggu tali kafan dilepas, tapi tak pernah selesai.", foto:"img/setan/pocong.jpg" },
+  { nama:"🕯 Genderuwo", deskripsi:"Penunggu pohon besar yang menyukai aroma darah.", foto:"img/setan/genderuwo.jpg" },
+  { nama:"🩸 Tuyul", deskripsi:"Kecil, cepat, dan haus akan emas manusia.", foto:"img/setan/TUYUL.jpg" },
+  { nama:"🌑 Leak", deskripsi:"Makhluk malam yang menari di atas api kehidupan.", foto:"img/setan/leak.jpg" },
+  { nama:"🕷 Wewe Gombel", deskripsi:"Melindungi anak hilang, tapi membenci orang dewasa.", foto:"img/setan/wewegombel.jpg" }
 ];
 
 const resultDiv = document.getElementById('result');
@@ -49,7 +49,7 @@ const summonBtn = document.getElementById('summonBtn');
 
 summonBtn.addEventListener('click',()=>{
   const random=setanList[Math.floor(Math.random()*setanList.length)];
-  setanImg.src=random.url;
+  setanImg.src=random.;
   setanImg.style.display='block';
   resultDiv.innerHTML=`${random.nama} — ${random.deskripsi}`;
   resultDiv.style.animation='none';
