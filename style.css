@@ -55,22 +55,6 @@ nav ul li a {
 }
 nav ul li a:hover { color:#fff; text-shadow:0 0 12px red; }
 
-/* === NAV ICONS (HORROR MINIMALIST) === */
-nav a {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Icon default kecil */
-nav a::before {
-  font-size: 16px;
-  opacity: 0.75;
-  transition: 0.2s ease;
-}
-
-
 /* === Header / Main === */
 header { padding-top:120px; }
 h1 { font-family:'Cinzel', serif; font-size:2.8rem; letter-spacing:2px; color:#ff2e2e; text-shadow:0 0 25px rgba(255,0,0,0.7); margin-bottom:15px; }
