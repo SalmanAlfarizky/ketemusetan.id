@@ -16,7 +16,6 @@ body {
 }
 
 /* NAVBAR SAMA PERSIS DENGAN INDEX */
-
 nav {
    width:100%;
     background-color:#111;
@@ -47,7 +46,7 @@ nav img.logo-ui {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 35px;
+  gap: 20px;
 }
 nav ul li a {
   color: #ff3c3c;
@@ -60,6 +59,8 @@ nav ul li a:hover {
   color: #fff;
   text-shadow: 0 0 12px red;
 }
+
+
 
 
 
