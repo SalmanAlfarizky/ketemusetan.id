@@ -14,6 +14,15 @@ body {
   overflow-x: hidden;
   position: relative;
 
+    /* Fade + Slide Transisi */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Overlay gelap untuk semua halaman */
@@ -254,16 +263,5 @@ footer {
   nav img.logo-ui {
     width: 50px;
   }
-}
-
-body {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-body.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
