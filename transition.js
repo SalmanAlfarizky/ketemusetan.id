@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Fade + slide-in saat halaman dibuka
+  // Fade-in saat halaman dibuka
   document.body.classList.add("show");
 
   // Tangkap semua link internal
@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
   links.forEach(link => {
     link.addEventListener("click", function(e) {
       const href = this.getAttribute("href");
-
-      if(href && !href.startsWith("#")) { // link ke halaman lain
+      if(href && !href.startsWith("#")) {
         e.preventDefault();
-        // Tambahkan class fade-out
+        // fade-out sebelum pindah halaman
         document.body.classList.add("fade-out");
         setTimeout(() => {
           window.location.href = href;
-        }, 600); // sama dengan durasi CSS
+        }, 600); // durasi sama dengan CSS
       }
     });
   });
 });
+
