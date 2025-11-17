@@ -201,10 +201,6 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
   }
 }
 
-body.index main {
-  padding-bottom: 60px;
-}
-
 /* === Footer === */
 footer {
   background: rgba(0, 0, 0, 0.75);
@@ -306,15 +302,4 @@ footer {
     width: 50px;
   }
 }
-
-/* === Page Transition Fade Effect === */
-body {
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-body.show {
-  opacity: 1;
-}
-
 
