@@ -4,154 +4,51 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About – KetemuSetan.id</title>
-
-<!-- Fonts & CSS -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="about.css"> 
-<style>
-/* Background sama seperti index */
-body {
-  color: #fff;
-  background-image: url("img/aboutbackground.jpg");
-    font-family:'Poppins', sans-serif;
-    text-align:center;
-    overflow-x:hidden;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-}
-
-/* Navbar sama persis */
-
-
-/* Judul About */
-h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.8rem;
-  letter-spacing: 2px;
-  color: #ff2e2e;
-  text-shadow: 0 0 25px rgba(255,0,0,0.7);
-  margin-bottom: 15px;
-}
-
-/* Subtitle */
-.subtitle {
-  color: #ddd;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  margin-bottom: 40px;
-}
-
-/* Container Creator */
-.creators {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.card {
-  background: rgba(0,0,0,0.75);
-  padding: 20px;
-  width: 240px;
-  border-radius: 15px;
-  border: 2px solid #700000;
-  text-align: center;
-  box-shadow: 0 0 25px rgba(255,0,0,0.3);
-}
-
-.card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  font-family: 'Cinzel', serif;
-  color: #ff4444;
-  margin-bottom: 5px;
-}
-
-.card p {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-.card a {
-  color: #ff4c4c;
-  font-weight: bold;
-  text-decoration: none;
-}
-.card a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px red;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 25px;
-  background: rgba(80,0,0,0.7);
-  border-top: 2px solid red;
-  margin-top: 60px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-image:url('img/aboutbackground.jpg')">
 
-<!-- NAVBAR -->
 <nav>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Universitas_Indonesia_%28emblem_only%29.svg"
-       alt="Logo UI" class="logo-ui">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Logo_Universitas_Indonesia_%28emblem_only%29.svg" alt="Logo UI" class="logo-ui">
   <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="katalog.html">Katalog</a></li>
-  <li><a href="kontak.html">Kontak</a></li>
-
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="katalog.html">Katalog</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
   </ul>
 </nav>
 
-<!-- Judul -->
-<h1>About Us</h1>
-<p class="subtitle">Empat pencipta di balik dunia mistis KetemuSetan.id</p>
+<header>
+  <h1>About Us</h1>
+  <p class="subtitle">Empat pencipta di balik dunia mistis KetemuSetan.id</p>
+</header>
 
-<!-- Creator Section -->
-<div class="creators">
-
+<main class="creators">
   <div class="card">
-    <img src="creator1.jpg">
+    <img src="creator1.jpg" alt="Creator 1">
     <h3>Nama Creator 1</h3>
     <p>Pembuat tampilan & efek visual.</p>
     <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
-
   <div class="card">
-    <img src="creator2.jpg">
+    <img src="creator2.jpg" alt="Creator 2">
     <h3>Nama Creator 2</h3>
     <p>Penulis lore & deskripsi setan.</p>
     <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
-
   <div class="card">
-    <img src="creator3.jpg">
+    <img src="creator3.jpg" alt="Creator 3">
     <h3>Nama Creator 3</h3>
     <p>Developer fitur acak setan.</p>
     <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
-
   <div class="card">
-    <img src="creator4.jpg">
+    <img src="creator4.jpg" alt="Creator 4">
     <h3>Nama Creator 4</h3>
     <p>UI/UX dan konsultan mistis.</p>
     <a href="https://instagram.com/" target="_blank">Instagram</a>
   </div>
-
-</div>
+</main>
 
 <footer>
   © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
