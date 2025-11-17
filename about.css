@@ -48,6 +48,11 @@ nav ul {
   list-style: none;
   gap: 20px;
 }
+
+  nav ul li {
+    margin:0 20px;
+  }
+
 nav ul li a {
   color: #ff3c3c;
   font-family: 'Cinzel', serif;
