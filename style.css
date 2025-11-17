@@ -46,7 +46,7 @@ nav {
   50% { border-color:#ff4c4c; box-shadow:0 0 30px #ff0000aa; }
   100% { border-color:#ff1a1a; box-shadow:0 0 15px #ff000030; }
 }
-nav img.logo-ui { width:160px; filter:drop-shadow(0 0 12px #ff0000aa); transition:0.3s; }
+nav img.logo-ui { width:80px; filter:drop-shadow(0 0 12px #ff0000aa); transition:0.3s; }
 nav img.logo-ui:hover { transform:scale(1.1); filter:drop-shadow(0 0 25px #ff2020); }
 nav ul { display:flex; list-style:none; gap:20px; }
 nav ul li a {
