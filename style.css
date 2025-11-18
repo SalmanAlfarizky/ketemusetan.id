@@ -154,6 +154,29 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
   }
 }
 
+/* === [BARU] Kontak Alternatif === */
+.contact-alternatif {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #5a0000; /* Garis pemisah merah gelap */
+  color: #ddd;
+  text-align: center;
+}
+.contact-alternatif p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.contact-alternatif a {
+  color: #ff4c4c; /* Warna link merah */
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.contact-alternatif a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px red;
+}
 /* === Footer === */
 footer {
   background: rgba(0, 0, 0, 0.75);
@@ -176,6 +199,7 @@ footer {
 
 /* === Creator Container === */
 .creators { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:40px; }
+
 
 /* === Responsive Mobile / Tablet === */
 @media (max-width: 768px) {
