@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #000; /* Latar belakang hitam jika gambar gagal load */
+  background-color: #000;
   color: #fff;
   overflow: hidden; /* SANGAT PENTING: Mencegah scrollbar saat zoom */
 }
@@ -22,14 +22,15 @@ body {
   height: 100vh;
   
   /* Background baru Anda */
-  background-image: url('img/assets/background.jpg');
-  background-size: cover;
-  background-position: center;
+  background-image: url('background.jpg');
+  background-size: contain; /* UBAH: Gunakan 'contain' agar gambar tidak terpotong */
+  background-repeat: no-repeat; /* Pastikan tidak diulang */
+  background-position: center bottom; /* Pindahkan posisi gambar ke bawah agar pintu terlihat */
 
-  /* Pusatkan tombol 'Mulai' di bawah */
+  /* Pusatkan tombol 'Mulai' */
   display: flex;
-  align-items: flex-end; /* Taruh di bawah */
-  justify-content: center; /* Taruh di tengah */
+  align-items: center; /* Pusat vertikal */
+  justify-content: center; /* Pusat horizontal */
   
   /* Transisi Zoom 1.2 detik */
   transition: transform 1.2s ease-in-out, opacity 1.2s ease-in-out;
@@ -48,7 +49,8 @@ body {
 .home-content {
   position: relative;
   z-index: 2; /* Di atas overlay */
-  padding-bottom: 7vh; /* Jarak tombol dari bawah */
+  /* Ubah posisi tombol agar tidak menutupi pintu */
+  margin-top: 20vh; /* Geser tombol ke atas dari tengah */
 }
 
 .btn-mulai {
@@ -159,6 +161,80 @@ body.zoomed #content-container {
   color: #ddd;
 }
 
+/* === BAGIAN KONTRIBUTOR (BARU/Diaktifkan Kembali) === */
+.creators-section {
+  max-width: 1000px;
+  margin: 80px auto 60px auto; /* Jarak atas dan bawah */
+  padding: 0 20px;
+  text-align: center;
+}
+.creators-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #ff2e2e;
+  text-shadow: 0 0 20px rgba(255,0,0,0.6);
+  margin-bottom: 50px;
+}
+
+.creators-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(10, 0, 0, 0.6);
+  border: 1px solid #ff1a1a;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 20px #ff000040;
+}
+
+.creator.reverse {
+  flex-direction: row-reverse;
+}
+
+.creator img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #ff4444;
+  box-shadow: 0 0 25px #ff000080;
+}
+
+.creator .text {
+  flex-grow: 1; /* Agar teks mengisi ruang sisa */
+  text-align: left;
+}
+
+.creator .text h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #ff4444;
+  margin-bottom: 8px;
+}
+
+.creator .text p {
+  font-size: 1rem;
+  color: #eee;
+  margin-bottom: 5px;
+}
+
+.creator .text a {
+  color: #ff4c4c;
+  text-decoration: none;
+  font-weight: bold;
+}
+.creator .text a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px red;
+}
+
+
 /* Footer & Kontak */
 .content-footer {
   text-align: center;
@@ -180,6 +256,7 @@ body.zoomed #content-container {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   box-shadow: 0 0 40px #ff000060;
+  margin-bottom: 40px; /* Jarak dari kontak info */
 }
 .btn-kembali:hover {
   transform: scale(1.05);
@@ -210,12 +287,31 @@ body.zoomed #content-container {
     grid-template-columns: repeat(3, 1fr); /* 3 kolom di tablet */
   }
 }
+@media (max-width: 900px) {
+  .creators-zigzag {
+    gap: 40px;
+  }
+  .creator, .creator.reverse {
+    flex-direction: column; /* Tumpuk di layar kecil */
+    text-align: center;
+  }
+  .creator img {
+    width: 180px;
+    height: 180px;
+  }
+  .creator .text {
+    text-align: center;
+  }
+}
 @media (max-width: 768px) {
   .katalog-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet kecil */
   }
   .content-header h1 {
     font-size: 2.2rem;
+  }
+  #content-container {
+    padding: 20px; /* Kurangi padding di mobile */
   }
 }
 @media (max-width: 500px) {
@@ -227,5 +323,18 @@ body.zoomed #content-container {
   }
   .content-header h1 {
     font-size: 1.8rem;
+  }
+  .creators-title {
+    font-size: 1.8rem;
+  }
+  .creator img {
+    width: 150px;
+    height: 150px;
+  }
+  .creator .text h3 {
+    font-size: 1.3rem;
+  }
+  .creator .text p {
+    font-size: 0.9rem;
   }
 }
