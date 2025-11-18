@@ -22,7 +22,7 @@ body {
   height: 100vh;
   
   /* Background baru Anda */
-  background-image: url('background.jpg');
+  background-image: url('img/assets/background.jpg');
   background-size: contain; /* UBAH: Gunakan 'contain' agar gambar tidak terpotong */
   background-repeat: no-repeat; /* Pastikan tidak diulang */
   background-position: center bottom; /* Pindahkan posisi gambar ke bawah agar pintu terlihat */
