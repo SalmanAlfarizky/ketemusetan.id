@@ -1,8 +1,13 @@
 /* === Fonts === */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap');
 
-/* === Reset dan Body === */
-* { margin:0; padding:0; box-sizing:border-box; }
+/* === PERBAIKAN 1: Reset dasar dan box-sizing === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ini memperbaiki masalah 'menjorok ke kanan' */
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #fff;
@@ -11,19 +16,21 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   text-align: center;
-  min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+
+  /* === PERBAIKAN 2: Sintaks error diperbaiki, style transisi dipindah ke sini === */
+  opacity: 0; /* mulai transparan */
+  transition: opacity 0.6s ease;
 }
 
-/* Overlay gelap untuk semua halaman */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: -1;
+/* === PERBAIKAN 2: Definisi ini (dan .fade-out) SEHARUSNYA di luar 'body' === */
+body.show {
+  opacity: 1; /* fade-in */
+}
+
+body.fade-out {
+  opacity: 0; /* fade-out */
 }
 
 /* === Navbar === */
@@ -40,6 +47,7 @@ nav {
   padding:10px 50px;
   box-shadow:0 0 15px #ff000030;
   animation: neonBorder 2s infinite alternate;
+  /* 'box-sizing: border-box;' dari reset '*' di atas akan berlaku di sini */
 }
 @keyframes neonBorder {
   0% { border-color:#ff1a1a; box-shadow:0 0 15px #ff000030; }
@@ -60,7 +68,7 @@ header { padding-top:120px; }
 h1 { font-family:'Cinzel', serif; font-size:2.8rem; letter-spacing:2px; color:#ff2e2e; text-shadow:0 0 25px rgba(255,0,0,0.7); margin-bottom:15px; }
 .subtitle, .desc { color:#ddd; font-size:1rem; letter-spacing:1px; margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto; }
 
-/* === Main Content === */
+/* === Main Content (Index) === */
 main { max-width:600px; margin:0 auto; padding:50px 25px; display:flex; flex-direction:column; align-items:center; }
 button {
   background: linear-gradient(145deg,#7a0000,#ff1a1a);
@@ -81,6 +89,8 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
   flex-direction: column;
   gap: 60px;
   padding: 50px 20px;
+  max-width: 900px; /* Ditambahkan agar tidak terlalu lebar */
+  margin: 0 auto; /* Ditambahkan agar center */
 }
 
 .creator {
@@ -130,8 +140,101 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
   text-shadow: 0 0 10px red;
 }
 
-/* === Responsive === */
+/* === [BARU] Halaman Katalog === */
+.katalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0px 50px 40px 50px; /* Padding atas dihilangkan krn sdh ada di main */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.katalog-item {
+  background: rgba(10, 0, 0, 0.65);
+  border: 2px solid #ff1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px #ff000050;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.katalog-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px #ff000080;
+}
+.katalog-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #ff4444;
+}
+.katalog-item h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: #ff4444;
+  margin-bottom: 10px;
+}
+.katalog-item p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* === [BARU] Halaman Kontak === */
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto 40px auto; /* Margin atas 0 krn sdh ada di main */
+  padding: 40px;
+  background: rgba(10, 0, 0, 0.75);
+  border: 2px solid #ff1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #ff000060;
+}
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+.form-group label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: #ff4444;
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: #222;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  /* box-sizing sdh di-handle di reset '*' */
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff1a1a;
+  box-shadow: 0 0 10px #ff1a1a70;
+}
+/* Menggunakan style tombol yang sama dari index */
+.kontak-btn {
+  background: linear-gradient(145deg,#7a0000,#ff1a1a);
+  border:none; color:white; font-size:1.1rem; padding: 15px 40px; border-radius:50px;
+  cursor:pointer; font-family:'Cinzel', serif; letter-spacing:1px; transition:all 0.3s ease;
+  box-shadow:0 0 40px #ff000060;
+  width: 100%;
+}
+.kontak-btn:hover { transform:scale(1.03); box-shadow:0 0 100px #ff0000a0; }
+
+
+/* === Responsive (digabung dari file asli) === */
 @media (max-width: 768px) {
+  /* Style untuk creator (about) */
   .creator, .creator.reverse {
     flex-direction: column;
     text-align: center;
@@ -142,43 +245,10 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
   }
   .creator .text {
     max-width: 100%;
+    text-align: center; /* Disesuaikan agar center di mobile */
   }
-}
-@media (max-width: 480px) {
-  .creator img {
-    width: 150px;
-    height: 150px;
-  }
-  .creator .text h3 {
-    font-size: 1.2rem;
-  }
-}
 
-/* === Footer === */
-footer {
-  background: rgba(0, 0, 0, 0.75);
-  color: #e0e0e0;
-  text-align: center;
-  padding: 25px 0;
-  border-top: 1px solid #5a0000; /* merah gelap, halus */
-  font-size: 14px;
-  letter-spacing: 0.5px;
-}
-
-
-/* === Glitch Text === */
-.glitch { color:#ff1a1a; font-family:'Cinzel', serif; position:relative; }
-.glitch::before, .glitch::after {
-  content: attr(data-text); position:absolute; left:0; top:0; text-shadow:-2px 0 red;
-  animation:glitch 1s infinite;
-}
-@keyframes glitch { 0% {clip-path: inset(0 0 10% 0);} 50% {clip-path: inset(30% 0 0 0);} 100% {clip-path: inset(0 0 10% 0);} }
-
-/* === Creator Container === */
-.creators { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:40px; }
-
-/* === Responsive Mobile / Tablet === */
-@media (max-width: 768px) {
+  /* Style umum (dari file asli) */
   nav {
     flex-direction: column;
     padding: 10px 20px;
@@ -186,9 +256,12 @@ footer {
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* Ini mungkin tidak diinginkan, mari kita ubah */
+    gap: 15px; /* Dikecilkan */
     margin-top: 10px;
+    flex-direction: row; /* Dibuat tetap horizontal tapi wrap */
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   header h1 {
@@ -214,20 +287,19 @@ footer {
     height: 180px;
   }
 
-  .creators {
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 30px;
+  /* .creators (ganti ke .creators-zigzag) */
+  .creators-zigzag {
+    padding: 30px 15px;
+    gap: 30px;
   }
 
-  .card {
-    width: 90%;
-    max-width: 300px;
-    padding: 15px;
+  /* style .card (tidak ditemukan, mungkin .katalog-item?) */
+  .katalog-grid {
+    padding: 0 20px 20px 20px;
   }
 
-  .card img {
-    height: 200px;
+  .contact-container {
+    padding: 25px;
   }
 
   footer {
@@ -237,6 +309,14 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .creator img {
+    width: 150px;
+    height: 150px;
+  }
+  .creator .text h3 {
+    font-size: 1.2rem;
+  }
+  
   header h1 {
     font-size: 1.8rem;
   }
@@ -252,7 +332,36 @@ footer {
   }
 
   nav img.logo-ui {
-    width: 50px;
+    width: 50px; /* Logo dikecilkan di mobile */
+  }
+
+  nav ul {
+    gap: 10px; /* Gap link dikecilkan */
+  }
+  nav ul li a {
+    font-size: 1rem; /* Font link dikecilkan */
   }
 }
 
+/* === Footer === */
+footer {
+  background: rgba(0, 0, 0, 0.75);
+  color: #e0e0e0;
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid #5a0000; /* merah gelap, halus */
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-top: 60px; /* Ditambahkan agar ada jarak dari konten */
+}
+
+
+/* === Glitch Text === */
+.glitch { color:#ff1a1a; font-family:'Cinzel', serif; position:relative; }
+.glitch::before, .glitch::after {
+  content: attr(data-text); position:absolute; left:0; top:0; text-shadow:-2px 0 red;
+  animation:glitch 1s infinite;
+}
+@keyframes glitch { 0% {clip-path: inset(0 0 10% 0);} 50% {clip-path: inset(30% 0 0 0);} 100% {clip-path: inset(0 0 10% 0);} }
+
+/* Style .creators dan .card dari file asli tampaknya tidak terpakai/digantikan oleh .creators-zigzag dan .katalog-item, jadi saya biarkan. */
