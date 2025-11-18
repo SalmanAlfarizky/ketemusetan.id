@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KetemuSetan.id 👁‍🗨</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KetemuSetan.id 👁‍🗨</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-image:url('img/download.jpg')">
+<body>
 
-<nav>
-  <img src="img/logo.png" alt="Logo UI" class="logo-ui">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="katalog.html">Katalog</a></li>
-    <li><a href="kontak.html">Kontak</a></li>
-  </ul>
-</nav>
+  <div id="world-container">
+    <div class="home-content">
+      <img src="button.jpg" alt="Mulai Menjelajah" id="btn-zoom-in" class="btn-mulai">
+    </div>
+  </div>
 
-<header>
-  <h1>KetemuSetan.id</h1>
-  <p class="desc">Selamat datang di <b>KetemuSetan.id</b> — gerbang digital menuju dunia misteri. Tekan tombol di bawah bila kau cukup berani memanggil arwah acak malam ini...</p>
-</header>
+  <div id="content-container">
+    
+    <header class="content-header">
+      <h1>Katalog Entitas</h1>
+      <p class="subtitle">Daftar entitas yang telah kami dokumentasikan dan berhasil panggil.</p>
+    </header>
 
-<main>
-  <button id="summonBtn">🔮 Panggil Setan Acak</button>
-  <img id="setanImg" class="setan-img" style="display:none;">
-  <div class="result" id="result"></div>
-</main>
+    <main>
+      <div class="katalog-grid">
 
-<footer>
-  © 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”
-</footer>
+        <div class="katalog-item">
+          <img src="img/setan/Kuntilanak.jpg" alt="Kuntilanak">
+          <h3>👻 Kuntilanak</h3>
+          <p>Tangisnya mengantar jiwa yang hilang arah.</p>
+        </div>
 
-<script>
-const setanList = [
-  { nama:"👻 Kuntilanak", deskripsi:"Tangisnya mengantar jiwa yang hilang arah.", foto:"img/setan/Kuntilanak.jpg" },
-  { nama:"💀 Pocong", deskripsi:"Menunggu tali kafan dilepas, tapi tak pernah selesai.", foto:"img/setan/pocong.jpg" },
-  { nama:"🕯 Genderuwo", deskripsi:"Penunggu pohon besar yang menyukai aroma darah.", foto:"img/setan/genderuwo.jpg" },
-  { nama:"🩸 Tuyul", deskripsi:"Kecil, cepat, dan haus akan emas manusia.", foto:"img/setan/TUYUL.jpg" },
-  { nama:"🌑 Leak", deskripsi:"Makhluk malam yang menari di atas api kehidupan.", foto:"img/setan/leak.jpg" },
-  { nama:"🕷 Wewe Gombel", deskripsi:"Melindungi anak hilang, tapi membenci orang dewasa.", foto:"img/setan/wewegombel.jpg" }
-];
+        <div class="katalog-item">
+          <img src="img/setan/pocong.jpg" alt="Pocong">
+          <h3>💀 Pocong</h3>
+          <p>Menunggu tali kafan dilepas, tapi tak pernah selesai.</p>
+        </div>
 
-const resultDiv = document.getElementById('result');
-const setanImg = document.getElementById('setanImg');
-const summonBtn = document.getElementById('summonBtn');
+        <div class="katalog-item">
+          <img src="img/setan/genderuwo.jpg" alt="Genderuwo">
+          <h3>🕯 Genderuwo</h3>
+          <p>Penunggu pohon besar yang menyukai aroma darah.</p>
+        </div>
 
-summonBtn.addEventListener('click',()=>{
-  const random=setanList[Math.floor(Math.random()*setanList.length)];
-  setanImg.src=random.foto;
-  setanImg.style.display='block';
-  resultDiv.innerHTML=`${random.nama} — ${random.deskripsi}`;
-  resultDiv.style.animation='none';
-  setanImg.style.animation='none';
-  void resultDiv.offsetWidth;
-  resultDiv.style.animation='appear 0.8s ease';
-  setanImg.style.animation='fadeIn 0.8s ease';
-});
-</script>
+        <div class="katalog-item">
+          <img src="img/setan/TUYUL.jpg" alt="Tuyul">
+          <h3>🩸 Tuyul</h3>
+          <p>Kecil, cepat, dan haus akan emas manusia.</p>
+        </div>
 
-<!-- 🔊 Sound ditambahkan di sini -->
-<audio id="clickSound" src="kuntilanaksound.mp3"></audio>
+        <div class="katalog-item">
+          <img src="img/setan/leak.jpg" alt="Leak">
+          <h3>🌑 Leak</h3>
+          <p>Makhluk malam yang menari di atas api kehidupan.</p>
+        </div>
 
-<script>
-  const clickSound = document.getElementById("clickSound");
+        <div class="katalog-item">
+          <img src="img/setan/wewegombel.jpg" alt="Wewe Gombel">
+          <h3>🕷 Wewe Gombel</h3>
+          <p>Melindungi anak hilang, tapi membenci orang dewasa.</p>
+        </div>
+      </div>
+    </main>
 
-  function playSound() {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
+    <footer class="content-footer">
+      <button id="btn-zoom-out" class="btn-kembali">Kembali</button>
+      
+      <div class="contact-info">
+        <p>Atau hubungi kami langsung:</p>
+        <p>
+          <strong>Email:</strong> 
+          <a href="mailto:ketemusetanid@gmail.com">ketemusetanid@gmail.com</a>
+        </p>
+        <p>
+          <strong>WhatsApp:</strong> 
+          <a href="https://wa.me/6281389303662" target="_blank">081389303662</a>
+        </p>
+      </div>
 
-  // Sound untuk tombol panggil setan
-  document.getElementById("summonBtn").addEventListener("click", playSound);
+      <p class="copyright">© 2025 KetemuSetan.id — “Yang datang tak selalu bisa pergi.”</p>
+    </footer>
 
-  // Sound untuk navbar
-  document.querySelectorAll("nav a").forEach(item => {
-    item.addEventListener("click", playSound);
-  });
-</script>
+  </div>
+
+  <audio id="clickSound" src="kuntilanaksound.mp3"></audio>
+
+  <script src="main.js"></script>
 
 </body>
 </html>
