@@ -58,6 +58,7 @@ nav ul li a {
   font-family:'Cinzel', serif; font-size:1.15rem; transition:0.3s;
 }
 nav ul li a:hover { color:#fff; text-shadow:0 0 12px red; }
+/* === LOGO DI NAVBAR DITEKAN BISA BALIK KE HOME === */
 
 /* === Header / Main === */
 header { padding-top:120px; }
@@ -683,8 +684,8 @@ nav ul li a.active {
 
 /* === Page Load & Exit Animation === */
 body {
-    opacity: 0;
-    transition: opacity 0.4s ease;
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
 body.page-loaded {
