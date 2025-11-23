@@ -1,1 +1,95 @@
-.
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Katalog – KetemuSetan.id</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body style="background-image:url('img/download.jpg')">
+<div class="particles" id="particles"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <img src="img/logo.png" alt="Logo UI" class="logo-ui">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="katalog.html">Katalog</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Katalog Entitas</h1>
+  <p class="subtitle">Daftar entitas yang telah kami panggil.</p>
+</header>
+
+<!-- GRID -->
+<div class="katalog-grid">
+
+  <div class="katalog-item" data-id="1">
+    <img src="img/setan/Kuntilanak.jpg" alt="Kuntilanak">
+    <h3>👻 Kuntilanak</h3>
+    <p>Tangisnya mengantar jiwa yang hilang arah.</p>
+  </div>
+
+  <div class="katalog-item" data-id="2">
+    <img src="img/setan/pocong.jpg" alt="Pocong">
+    <h3>💀 Pocong</h3>
+    <p>Menunggu tali kafan dilepas.</p>
+  </div>
+
+  <div class="katalog-item" data-id="3">
+    <img src="img/setan/genderuwo.jpg" alt="Genderuwo">
+    <h3>🕯 Genderuwo</h3>
+    <p>Penunggu pohon besar.</p>
+  </div>
+
+  <div class="katalog-item" data-id="4">
+    <img src="img/setan/TUYUL.jpg" alt="Tuyul">
+    <h3>🩸 Tuyul</h3>
+    <p>Kecil, cepat, haus emas.</p>
+  </div>
+
+  <div class="katalog-item" data-id="5">
+    <img src="img/setan/leak.jpg" alt="Leak">
+    <h3>🌑 Leak</h3>
+    <p>Makhluk malam penari api.</p>
+  </div>
+
+  <div class="katalog-item" data-id="6">
+    <img src="img/setan/wewegombel.jpg" alt="Wewe Gombel">
+    <h3>🕷 Wewe Gombel</h3>
+    <p>Pelindung anak hilang.</p>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="setan-modal" class="modal">
+  <div class="modal-content">
+
+      <span class="close-btn">&times;</span>
+
+      <!-- Tombol slide -->
+      <button class="slide-btn left">&lt;</button>
+      <button class="slide-btn right">&gt;</button>
+
+      <img id="modal-img">
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <h3 id="modal-price"></h3>
+
+      <a href="kontak.html" class="order-btn">Order Sekarang</a>
+
+  </div>
+</div>
+
+<script src="main.js"></script>
+<script src="particle.js"></script>
+
+</body>
+</html>
