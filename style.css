@@ -303,14 +303,14 @@ footer {
 }
 
 body {
-    
+    background-color: var(--color-dark);
     color: var(--color-light);
     font-family: var(--font-sans);
     line-height: 1.6;
     /* Overlay untuk gambar background agar teks terbaca */
-    background: var(--color-dark) url('img/download.jpg') no-repeat center center fixed;
+    background: var(--color-dark) url('img/IMG_2804 (1).png') no-repeat center center fixed;
     background-size: cover;
-    background-blend-mode: multiply; /* Memburamkan gambar latar */
+    background-blend-mode: screen; /* Memburamkan gambar latar */
 }
 
 /* Transisi Smooth Global */
