@@ -16,7 +16,7 @@ body {
   position: relative;
 
    /* === CURSOR SETAN GLOBAL === */
-  cursor: url('img/kursor.png'), auto;
+  cursor: src="img/kursor.png", auto;
   
 }
 
