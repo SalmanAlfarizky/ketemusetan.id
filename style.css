@@ -303,7 +303,7 @@ footer {
 }
 
 body {
-    background-color: var(--color-dark);
+    
     color: var(--color-light);
     font-family: var(--font-sans);
     line-height: 1.6;
