@@ -58,7 +58,7 @@ nav ul li a {
   font-family:'Cinzel', serif; font-size:1.15rem; transition:0.3s;
 }
 nav ul li a:hover { color:#fff; text-shadow:0 0 12px red; }
-/* === LOGO DI NAVBAR DITEKAN BISA BALIK KE HOME === */
+/* === LOGO DI NAVBAR DITEKAN BISA BALIK KE 
 
 /* === Header / Main === */
 header { padding-top:120px; }
@@ -302,7 +302,15 @@ footer {
     box-sizing: border-box;
 }
 
-
+body {
+    color: var(--color-light);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    /* Overlay untuk gambar background agar teks terbaca */
+    background: var(--color-dark) url('img/download.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: multiply; /* Memburamkan gambar latar */
+}
 
 /* Transisi Smooth Global */
 a, button, .katalog-item, .modal-content {
@@ -675,8 +683,8 @@ nav ul li a.active {
 
 /* === Page Load & Exit Animation === */
 body {
-  opacity: 1;
-  transition: opacity 0.4s ease;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 body.page-loaded {
@@ -797,7 +805,7 @@ body.page-exit {
   height: 6px;
   background: rgba(255, 0, 0, 0.7);
   border-radius: 50%;
-  animation: floatUp 4s linear infinite;
+  animation: floatUp 2s linear infinite;
 }
 
 @keyframes floatUp {
