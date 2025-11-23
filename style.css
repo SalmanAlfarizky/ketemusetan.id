@@ -805,7 +805,7 @@ body.page-exit {
   height: 6px;
   background: rgba(255, 0, 0, 0.7);
   border-radius: 50%;
-  animation: floatUp 2s linear infinite;
+  animation: floatUp 4s linear infinite;
 }
 
 @keyframes floatUp {
