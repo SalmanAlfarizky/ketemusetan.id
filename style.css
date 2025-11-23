@@ -1,6 +1,8 @@
 /* === Fonts === */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap');
 
+/* === Reset dan Body === */
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family: 'Poppins', sans-serif;
   color: #fff;
@@ -9,20 +11,23 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   text-align: center;
+  min-height: 100vh;
   overflow-x: hidden;
   position: relative;
 
-   body {
-  opacity: 0; /* mulai transparan */
-  transition: opacity 0.6s ease;
+   /* === CURSOR SETAN GLOBAL === */
+  cursor: url('img/kursor.png'), auto;
+  
 }
 
-body.show {
-  opacity: 1; /* fade-in */
-}
-
-body.fade-out {
-  opacity: 0; /* fade-out */
+/* Overlay gelap untuk semua halaman */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
 }
 
 /* === Navbar === */
@@ -153,6 +158,29 @@ button:hover { transform:scale(1.1); box-shadow:0 0 100px #ff0000a0; }
   }
 }
 
+/* === [BARU] Kontak Alternatif === */
+.contact-alternatif {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #5a0000; /* Garis pemisah merah gelap */
+  color: #ddd;
+  text-align: center;
+}
+.contact-alternatif p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.contact-alternatif a {
+  color: #ff4c4c; /* Warna link merah */
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.contact-alternatif a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px red;
+}
 /* === Footer === */
 footer {
   background: rgba(0, 0, 0, 0.75);
@@ -175,6 +203,7 @@ footer {
 
 /* === Creator Container === */
 .creators { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:40px; }
+
 
 /* === Responsive Mobile / Tablet === */
 @media (max-width: 768px) {
@@ -255,3 +284,531 @@ footer {
   }
 }
 
+/* Variabel Global (dari desain sebelumnya) */
+:root {
+    --color-dark: #0A0A0A;
+    --color-light: #F0F0F0;
+    --color-accent: #8B0000; /* Merah Marun */
+    --color-secondary: #444444;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    --transition-speed: 0.4s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    /* Overlay untuk gambar background agar teks terbaca */
+    background: var(--color-dark) url('img/download.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: multiply; /* Memburamkan gambar latar */
+}
+
+/* Transisi Smooth Global */
+a, button, .katalog-item, .modal-content {
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+/* --- NAVIGASI --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid var(--color-secondary);
+    position: sticky; /* Sticky Navbar */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+.logo span {
+    color: var(--color-accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-light);
+    text-decoration: none;
+    margin-left: 25px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--color-accent);
+}
+
+/* --- HEADER KATALOG --- */
+.catalog-header {
+    text-align: center;
+    padding: 100px 20px 50px 20px;
+}
+.catalog-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--color-accent);
+}
+.subtitle {
+    color: var(--color-secondary);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* --- GRID KATALOG --- */
+main {
+    padding: 20px 50px;
+    min-height: 70vh;
+}
+.katalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.katalog-item {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.katalog-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(80%) brightness(0.7); /* Efek misterius */
+    transition: filter var(--transition-speed) ease-in-out;
+}
+
+.katalog-item:hover img {
+    filter: grayscale(0%) brightness(1); /* Kembali berwarna saat hover */
+}
+
+.katalog-item h3 {
+    font-family: var(--font-serif);
+    color: var(--color-accent);
+    margin: 15px 0 5px 0;
+    font-size: 1.8rem;
+}
+
+.katalog-item p {
+    color: var(--color-light);
+    padding: 0 15px;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--color-secondary);
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    background-color: var(--color-dark);
+}
+
+/* --- MODAL / POPUP DETAIL (Fitur Baru) --- */
+.modal {
+    display: none; /* Disembunyikan secara default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Latar belakang gelap */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: var(--color-dark);
+    margin: 10% auto; /* Tengah vertikal */
+    padding: 40px;
+    border: 1px solid var(--color-accent);
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+    /* Transisi untuk efek muncul dari atas */
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close-btn {
+    color: var(--color-accent);
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+/* Gaya Konten di dalam Modal */
+#modal-body-content h2 {
+    font-family: var(--font-serif);
+    color: var(--color-accent);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#modal-body-content p {
+    margin-bottom: 15px;
+    color: var(--color-light);
+}
+
+.modal-price {
+    font-size: 1.5rem;
+    color: #E2B700; /* Warna emas/kuning untuk harga */
+    font-weight: 700;
+    margin: 20px 0;
+    border-top: 1px solid var(--color-secondary);
+    border-bottom: 1px solid var(--color-secondary);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.contact-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.contact-btn:hover {
+    background-color: #A01010;
+}
+
+/* === KATALOG GRID === */
+.katalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.katalog-item {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #ff2a2aaa;
+  box-shadow: 0 0 15px #ff000040;
+}
+
+.katalog-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff000080;
+  border-color: #ff4c4c;
+}
+
+.katalog-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.katalog-item h3 {
+  color: #ff3c3c;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.katalog-item p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+nav {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.6);
+  border-bottom: 2px solid #ff1a1a;
+  backdrop-filter: blur(6px);
+  z-index: 999;
+}
+
+nav .logo-ui {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff3d3d;
+}
+
+nav ul li a.active {
+  color: #ff5050;
+  font-weight: 600;
+}
+
+/* === Modal === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #111;
+  padding: 25px;
+  width: 450px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  position: relative;
+  border: 2px solid #ff1a1a;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ff3131;
+}
+
+.modal-price {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #ff4444;
+  font-weight: bold;
+}
+
+.order-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff2222;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: #ff5555;
+}
+
+/* === Page Load & Exit Animation === */
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-exit {
+    opacity: 0;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: #111;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 420px;
+    width: 90%;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    backdrop-filter: blur(2px);
+    transition: 0.2s ease;
+}
+
+.slide-btn:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+.slide-btn.left {
+    left: -50px;
+}
+
+.slide-btn.right {
+    right: -50px;
+}
+
+/* ANIMASI SLIDE */
+.slide-animation {
+  animation: slideIn 0.35s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-animation-left {
+  animation: slideInLeft 0.35s ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* === Partikel Efek === */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* supaya ga ganggu klik */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 0, 0, 0.7);
+  border-radius: 50%;
+  animation: floatUp 2s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-150px); opacity: 0; }
+}
