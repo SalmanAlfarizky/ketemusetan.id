@@ -302,16 +302,7 @@ footer {
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--color-dark);
-    color: var(--color-light);
-    font-family: var(--font-sans);
-    line-height: 1.6;
-    /* Overlay untuk gambar background agar teks terbaca */
-    background: var(--color-dark) url('img/download.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-blend-mode: multiply; /* Memburamkan gambar latar */
-}
+
 
 /* Transisi Smooth Global */
 a, button, .katalog-item, .modal-content {
