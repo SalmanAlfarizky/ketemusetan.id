@@ -15,8 +15,8 @@ body {
   overflow-x: hidden;
   position: relative;
 
-   /* === CURSOR SETAN GLOBAL === */
-  cursor: src="img/kursor.png", auto;
+ /* === CURSOR SETAN GLOBAL === */
+  cursor: url('img/kursor.png'), auto;
   
 }
 
